@@ -77,6 +77,7 @@ volatile uint16_t B [SIZE] = {
 };
 ```
 Product:
+
 ![Results](nios_output.png)
 
 ## Directory Layout
