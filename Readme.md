@@ -6,15 +6,18 @@ The results are streamed out in the same order. This makes it possible to
 chain multiplication by connecting outputs to inputs of other Multipliers.
 
 ## Architecture 
-The architecture is a simple 2D array of MAC units with FIFOs for synchronization.
-The input elements get fed into their respective FIFO as they arrive and 
-are fed into the MAC when both `a` and `b` inputs are ready. The FIFOs are 
-`N` deep where `N` is the dimension of the MAC Array. 
+The architecture of a PE (Processing Engine) is a simple 2D array of MAC units with FIFOs for synchronization.
+The input elements get fed into their respective FIFO (only the elements that are needed in
+the calculation are pushed into the FIFO, this is accomplished via Counters tracking the 
+coordinates of the element) as they arrive and are fed into the MAC when both `a` and `b` 
+inputs are ready. The FIFOs are `N` deep where `N` is the dimension of the MAC Array. Thanks
+to the FIFOs, streams `A` and `B` need not be synchronized.
 
-Since all the computations happen in parallel, the PE only needs 3 more 
-cycles after `a` and `b` matrices have been streamed into it to finish
-the computation. After that it will begin streaming the results, clear the
-MACs and begin accepting new inputs.
+The MAC itself is a 3 stage pipeline
+
+Since all the computations happen in parallel, the PE only needs 3 more cycles after `a` 
+and `b` matrices have been streamed into it to finish the computation. After that it will 
+begin streaming the results, clear the MACs and begin accepting new inputs.
 
 Assuming Data is sent every clock cycle, `N^2 + 3` cycles are needed for
 the computation and `N` more cycles to transfer the results
@@ -23,7 +26,8 @@ the computation and `N` more cycles to transfer the results
 
 ## Variants
  - Streaming Outputs (`PeStream`): The outputs are streamed one value at a time
- - MemoryMapped Outputs (`PeMM`, NOT TESTED): The outputs are available 3 cycles after inputs
+ - MemoryMapped Outputs (`PeMM`, NOT TESTED): The outputs are available 3 cycles after 
+ inputs
  have been streamed accessed with a simple MM interface
 
 ## Interfaces
