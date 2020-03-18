@@ -27,3 +27,4 @@ de10nano/software/matmul/matmul.objdump
 de10nano/software/matmul/readme.txt
 de10nano/software/matmul_bsp/.force_relink
 *.a
+/verbose.log
