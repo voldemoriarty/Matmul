@@ -1,19 +1,19 @@
 // Generator : SpinalHDL v1.3.8    git head : 57d97088b91271a094cebad32ed86479199955df
-// Date      : 17/03/2020, 19:38:21
+// Date      : 18/03/2020, 13:53:47
 // Component : PeStream
 
 
 module Fifo (
-      input  [7:0] io_push_data,
+      input  [15:0] io_push_data,
       input   io_push_en,
-      output [7:0] io_pop_data,
+      output [15:0] io_pop_data,
       input   io_pop_en,
       output reg  io_pop_valid,
       output  io_full,
       output  io_empty,
       input   clk,
       input   reset);
-  wire [7:0] _zz_2_;
+  wire [15:0] _zz_2_;
   wire  _zz_3_;
   wire  _zz_4_;
   wire [1:0] _zz_5_;
@@ -23,14 +23,14 @@ module Fifo (
   wire [0:0] _zz_9_;
   wire [2:0] _zz_10_;
   wire [2:0] _zz_11_;
-  wire [7:0] _zz_12_;
+  wire [15:0] _zz_12_;
   reg  _zz_1_;
   reg [2:0] wPtr;
   reg [2:0] rPtr;
   reg [3:0] count;
   wire  countLogic_push;
   wire  countLogic_pop;
-  reg [7:0] mem [0:4];
+  reg [15:0] mem [0:4];
   assign _zz_3_ = (io_push_en && (! io_full));
   assign _zz_4_ = (io_pop_en && (! io_empty));
   assign _zz_5_ = {countLogic_push,countLogic_pop};
@@ -100,30 +100,30 @@ endmodule
 //Fifo_1_ remplaced by Fifo
 
 module Mac (
-      input  [7:0] io_a,
-      input  [7:0] io_b,
-      output [15:0] io_res,
+      input  [15:0] io_a,
+      input  [15:0] io_b,
+      output [31:0] io_res,
       input   io_clr,
       input   io_en,
       input   clk,
       input   reset);
-  wire [15:0] _zz_1_;
-  reg [15:0] impl_or;
-  wire [7:0] impl_a;
-  wire [7:0] impl_b;
-  wire [15:0] impl_c;
+  wire [31:0] _zz_1_;
+  reg [31:0] impl_or;
+  wire [15:0] impl_a;
+  wire [15:0] impl_b;
+  wire [31:0] impl_c;
   wire  impl_clr;
   wire  impl_en;
-  reg [7:0] impl_ar;
-  reg [7:0] impl_br;
+  reg [15:0] impl_ar;
+  reg [15:0] impl_br;
   reg  impl_sr;
-  reg [15:0] impl_mr;
-  reg [15:0] impl_adder;
+  reg [31:0] impl_mr;
+  reg [31:0] impl_adder;
   reg  impl_sr_regNextWhen;
   assign _zz_1_ = (impl_ar * impl_br);
   always @ (*) begin
     if(impl_sr_regNextWhen)begin
-      impl_or = (16'b0000000000000000);
+      impl_or = (32'b00000000000000000000000000000000);
     end else begin
       impl_or = impl_adder;
     end
@@ -137,10 +137,10 @@ module Mac (
   assign impl_en = io_en;
   always @ (posedge clk or posedge reset) begin
     if (reset) begin
-      impl_ar <= (8'b00000000);
-      impl_br <= (8'b00000000);
-      impl_mr <= (16'b0000000000000000);
-      impl_adder <= (16'b0000000000000000);
+      impl_ar <= (16'b0000000000000000);
+      impl_br <= (16'b0000000000000000);
+      impl_mr <= (32'b00000000000000000000000000000000);
+      impl_adder <= (32'b00000000000000000000000000000000);
     end else begin
       if(impl_en)begin
         impl_ar <= impl_a;
@@ -386,34 +386,34 @@ endmodule
 
 module Pe (
       input   io_flowA_valid,
-      input  [7:0] io_flowA_payload,
+      input  [15:0] io_flowA_payload,
       input   io_flowB_valid,
-      input  [7:0] io_flowB_payload,
-      output [15:0] io_results_0_0,
-      output [15:0] io_results_0_1,
-      output [15:0] io_results_0_2,
-      output [15:0] io_results_0_3,
-      output [15:0] io_results_0_4,
-      output [15:0] io_results_1_0,
-      output [15:0] io_results_1_1,
-      output [15:0] io_results_1_2,
-      output [15:0] io_results_1_3,
-      output [15:0] io_results_1_4,
-      output [15:0] io_results_2_0,
-      output [15:0] io_results_2_1,
-      output [15:0] io_results_2_2,
-      output [15:0] io_results_2_3,
-      output [15:0] io_results_2_4,
-      output [15:0] io_results_3_0,
-      output [15:0] io_results_3_1,
-      output [15:0] io_results_3_2,
-      output [15:0] io_results_3_3,
-      output [15:0] io_results_3_4,
-      output [15:0] io_results_4_0,
-      output [15:0] io_results_4_1,
-      output [15:0] io_results_4_2,
-      output [15:0] io_results_4_3,
-      output [15:0] io_results_4_4,
+      input  [15:0] io_flowB_payload,
+      output [31:0] io_results_0_0,
+      output [31:0] io_results_0_1,
+      output [31:0] io_results_0_2,
+      output [31:0] io_results_0_3,
+      output [31:0] io_results_0_4,
+      output [31:0] io_results_1_0,
+      output [31:0] io_results_1_1,
+      output [31:0] io_results_1_2,
+      output [31:0] io_results_1_3,
+      output [31:0] io_results_1_4,
+      output [31:0] io_results_2_0,
+      output [31:0] io_results_2_1,
+      output [31:0] io_results_2_2,
+      output [31:0] io_results_2_3,
+      output [31:0] io_results_2_4,
+      output [31:0] io_results_3_0,
+      output [31:0] io_results_3_1,
+      output [31:0] io_results_3_2,
+      output [31:0] io_results_3_3,
+      output [31:0] io_results_3_4,
+      output [31:0] io_results_4_0,
+      output [31:0] io_results_4_1,
+      output [31:0] io_results_4_2,
+      output [31:0] io_results_4_3,
+      output [31:0] io_results_4_4,
       input   io_clear,
       output  io_done,
       output  io_last,
@@ -421,379 +421,379 @@ module Pe (
       input   reset);
   wire  _zz_26_;
   wire  _zz_27_;
-  reg [7:0] _zz_28_;
-  reg [7:0] _zz_29_;
+  reg [15:0] _zz_28_;
+  reg [15:0] _zz_29_;
   reg  _zz_30_;
   reg  _zz_31_;
   wire  _zz_32_;
   wire  _zz_33_;
-  reg [7:0] _zz_34_;
-  reg [7:0] _zz_35_;
+  reg [15:0] _zz_34_;
+  reg [15:0] _zz_35_;
   reg  _zz_36_;
   reg  _zz_37_;
   wire  _zz_38_;
   wire  _zz_39_;
-  reg [7:0] _zz_40_;
-  reg [7:0] _zz_41_;
+  reg [15:0] _zz_40_;
+  reg [15:0] _zz_41_;
   reg  _zz_42_;
   reg  _zz_43_;
   wire  _zz_44_;
   wire  _zz_45_;
-  reg [7:0] _zz_46_;
-  reg [7:0] _zz_47_;
+  reg [15:0] _zz_46_;
+  reg [15:0] _zz_47_;
   reg  _zz_48_;
   reg  _zz_49_;
   wire  _zz_50_;
   wire  _zz_51_;
-  reg [7:0] _zz_52_;
-  reg [7:0] _zz_53_;
+  reg [15:0] _zz_52_;
+  reg [15:0] _zz_53_;
   reg  _zz_54_;
   reg  _zz_55_;
   wire  _zz_56_;
   wire  _zz_57_;
-  reg [7:0] _zz_58_;
-  reg [7:0] _zz_59_;
+  reg [15:0] _zz_58_;
+  reg [15:0] _zz_59_;
   reg  _zz_60_;
   reg  _zz_61_;
   wire  _zz_62_;
   wire  _zz_63_;
-  reg [7:0] _zz_64_;
-  reg [7:0] _zz_65_;
+  reg [15:0] _zz_64_;
+  reg [15:0] _zz_65_;
   reg  _zz_66_;
   reg  _zz_67_;
   wire  _zz_68_;
   wire  _zz_69_;
-  reg [7:0] _zz_70_;
-  reg [7:0] _zz_71_;
+  reg [15:0] _zz_70_;
+  reg [15:0] _zz_71_;
   reg  _zz_72_;
   reg  _zz_73_;
   wire  _zz_74_;
   wire  _zz_75_;
-  reg [7:0] _zz_76_;
-  reg [7:0] _zz_77_;
+  reg [15:0] _zz_76_;
+  reg [15:0] _zz_77_;
   reg  _zz_78_;
   reg  _zz_79_;
   wire  _zz_80_;
   wire  _zz_81_;
-  reg [7:0] _zz_82_;
-  reg [7:0] _zz_83_;
+  reg [15:0] _zz_82_;
+  reg [15:0] _zz_83_;
   reg  _zz_84_;
   reg  _zz_85_;
   wire  _zz_86_;
   wire  _zz_87_;
-  reg [7:0] _zz_88_;
-  reg [7:0] _zz_89_;
+  reg [15:0] _zz_88_;
+  reg [15:0] _zz_89_;
   reg  _zz_90_;
   reg  _zz_91_;
   wire  _zz_92_;
   wire  _zz_93_;
-  reg [7:0] _zz_94_;
-  reg [7:0] _zz_95_;
+  reg [15:0] _zz_94_;
+  reg [15:0] _zz_95_;
   reg  _zz_96_;
   reg  _zz_97_;
   wire  _zz_98_;
   wire  _zz_99_;
-  reg [7:0] _zz_100_;
-  reg [7:0] _zz_101_;
+  reg [15:0] _zz_100_;
+  reg [15:0] _zz_101_;
   reg  _zz_102_;
   reg  _zz_103_;
   wire  _zz_104_;
   wire  _zz_105_;
-  reg [7:0] _zz_106_;
-  reg [7:0] _zz_107_;
+  reg [15:0] _zz_106_;
+  reg [15:0] _zz_107_;
   reg  _zz_108_;
   reg  _zz_109_;
   wire  _zz_110_;
   wire  _zz_111_;
-  reg [7:0] _zz_112_;
-  reg [7:0] _zz_113_;
+  reg [15:0] _zz_112_;
+  reg [15:0] _zz_113_;
   reg  _zz_114_;
   reg  _zz_115_;
   wire  _zz_116_;
   wire  _zz_117_;
-  reg [7:0] _zz_118_;
-  reg [7:0] _zz_119_;
+  reg [15:0] _zz_118_;
+  reg [15:0] _zz_119_;
   reg  _zz_120_;
   reg  _zz_121_;
   wire  _zz_122_;
   wire  _zz_123_;
-  reg [7:0] _zz_124_;
-  reg [7:0] _zz_125_;
+  reg [15:0] _zz_124_;
+  reg [15:0] _zz_125_;
   reg  _zz_126_;
   reg  _zz_127_;
   wire  _zz_128_;
   wire  _zz_129_;
-  reg [7:0] _zz_130_;
-  reg [7:0] _zz_131_;
+  reg [15:0] _zz_130_;
+  reg [15:0] _zz_131_;
   reg  _zz_132_;
   reg  _zz_133_;
   wire  _zz_134_;
   wire  _zz_135_;
-  reg [7:0] _zz_136_;
-  reg [7:0] _zz_137_;
+  reg [15:0] _zz_136_;
+  reg [15:0] _zz_137_;
   reg  _zz_138_;
   reg  _zz_139_;
   wire  _zz_140_;
   wire  _zz_141_;
-  reg [7:0] _zz_142_;
-  reg [7:0] _zz_143_;
+  reg [15:0] _zz_142_;
+  reg [15:0] _zz_143_;
   reg  _zz_144_;
   reg  _zz_145_;
   wire  _zz_146_;
   wire  _zz_147_;
-  reg [7:0] _zz_148_;
-  reg [7:0] _zz_149_;
+  reg [15:0] _zz_148_;
+  reg [15:0] _zz_149_;
   reg  _zz_150_;
   reg  _zz_151_;
   wire  _zz_152_;
   wire  _zz_153_;
-  reg [7:0] _zz_154_;
-  reg [7:0] _zz_155_;
+  reg [15:0] _zz_154_;
+  reg [15:0] _zz_155_;
   reg  _zz_156_;
   reg  _zz_157_;
   wire  _zz_158_;
   wire  _zz_159_;
-  reg [7:0] _zz_160_;
-  reg [7:0] _zz_161_;
+  reg [15:0] _zz_160_;
+  reg [15:0] _zz_161_;
   reg  _zz_162_;
   reg  _zz_163_;
   wire  _zz_164_;
   wire  _zz_165_;
-  reg [7:0] _zz_166_;
-  reg [7:0] _zz_167_;
+  reg [15:0] _zz_166_;
+  reg [15:0] _zz_167_;
   reg  _zz_168_;
   reg  _zz_169_;
   wire  _zz_170_;
   wire  _zz_171_;
-  reg [7:0] _zz_172_;
-  reg [7:0] _zz_173_;
+  reg [15:0] _zz_172_;
+  reg [15:0] _zz_173_;
   reg  _zz_174_;
   reg  _zz_175_;
-  wire [7:0] macs_0_0_fifoA_io_pop_data;
+  wire [15:0] macs_0_0_fifoA_io_pop_data;
   wire  macs_0_0_fifoA_io_pop_valid;
   wire  macs_0_0_fifoA_io_full;
   wire  macs_0_0_fifoA_io_empty;
-  wire [7:0] macs_0_0_fifoB_io_pop_data;
+  wire [15:0] macs_0_0_fifoB_io_pop_data;
   wire  macs_0_0_fifoB_io_pop_valid;
   wire  macs_0_0_fifoB_io_full;
   wire  macs_0_0_fifoB_io_empty;
-  wire [15:0] macs_0_0_mac_io_res;
-  wire [7:0] macs_0_1_fifoA_io_pop_data;
+  wire [31:0] macs_0_0_mac_io_res;
+  wire [15:0] macs_0_1_fifoA_io_pop_data;
   wire  macs_0_1_fifoA_io_pop_valid;
   wire  macs_0_1_fifoA_io_full;
   wire  macs_0_1_fifoA_io_empty;
-  wire [7:0] macs_0_1_fifoB_io_pop_data;
+  wire [15:0] macs_0_1_fifoB_io_pop_data;
   wire  macs_0_1_fifoB_io_pop_valid;
   wire  macs_0_1_fifoB_io_full;
   wire  macs_0_1_fifoB_io_empty;
-  wire [15:0] macs_0_1_mac_io_res;
-  wire [7:0] macs_0_2_fifoA_io_pop_data;
+  wire [31:0] macs_0_1_mac_io_res;
+  wire [15:0] macs_0_2_fifoA_io_pop_data;
   wire  macs_0_2_fifoA_io_pop_valid;
   wire  macs_0_2_fifoA_io_full;
   wire  macs_0_2_fifoA_io_empty;
-  wire [7:0] macs_0_2_fifoB_io_pop_data;
+  wire [15:0] macs_0_2_fifoB_io_pop_data;
   wire  macs_0_2_fifoB_io_pop_valid;
   wire  macs_0_2_fifoB_io_full;
   wire  macs_0_2_fifoB_io_empty;
-  wire [15:0] macs_0_2_mac_io_res;
-  wire [7:0] macs_0_3_fifoA_io_pop_data;
+  wire [31:0] macs_0_2_mac_io_res;
+  wire [15:0] macs_0_3_fifoA_io_pop_data;
   wire  macs_0_3_fifoA_io_pop_valid;
   wire  macs_0_3_fifoA_io_full;
   wire  macs_0_3_fifoA_io_empty;
-  wire [7:0] macs_0_3_fifoB_io_pop_data;
+  wire [15:0] macs_0_3_fifoB_io_pop_data;
   wire  macs_0_3_fifoB_io_pop_valid;
   wire  macs_0_3_fifoB_io_full;
   wire  macs_0_3_fifoB_io_empty;
-  wire [15:0] macs_0_3_mac_io_res;
-  wire [7:0] macs_0_4_fifoA_io_pop_data;
+  wire [31:0] macs_0_3_mac_io_res;
+  wire [15:0] macs_0_4_fifoA_io_pop_data;
   wire  macs_0_4_fifoA_io_pop_valid;
   wire  macs_0_4_fifoA_io_full;
   wire  macs_0_4_fifoA_io_empty;
-  wire [7:0] macs_0_4_fifoB_io_pop_data;
+  wire [15:0] macs_0_4_fifoB_io_pop_data;
   wire  macs_0_4_fifoB_io_pop_valid;
   wire  macs_0_4_fifoB_io_full;
   wire  macs_0_4_fifoB_io_empty;
-  wire [15:0] macs_0_4_mac_io_res;
-  wire [7:0] macs_1_0_fifoA_io_pop_data;
+  wire [31:0] macs_0_4_mac_io_res;
+  wire [15:0] macs_1_0_fifoA_io_pop_data;
   wire  macs_1_0_fifoA_io_pop_valid;
   wire  macs_1_0_fifoA_io_full;
   wire  macs_1_0_fifoA_io_empty;
-  wire [7:0] macs_1_0_fifoB_io_pop_data;
+  wire [15:0] macs_1_0_fifoB_io_pop_data;
   wire  macs_1_0_fifoB_io_pop_valid;
   wire  macs_1_0_fifoB_io_full;
   wire  macs_1_0_fifoB_io_empty;
-  wire [15:0] macs_1_0_mac_io_res;
-  wire [7:0] macs_1_1_fifoA_io_pop_data;
+  wire [31:0] macs_1_0_mac_io_res;
+  wire [15:0] macs_1_1_fifoA_io_pop_data;
   wire  macs_1_1_fifoA_io_pop_valid;
   wire  macs_1_1_fifoA_io_full;
   wire  macs_1_1_fifoA_io_empty;
-  wire [7:0] macs_1_1_fifoB_io_pop_data;
+  wire [15:0] macs_1_1_fifoB_io_pop_data;
   wire  macs_1_1_fifoB_io_pop_valid;
   wire  macs_1_1_fifoB_io_full;
   wire  macs_1_1_fifoB_io_empty;
-  wire [15:0] macs_1_1_mac_io_res;
-  wire [7:0] macs_1_2_fifoA_io_pop_data;
+  wire [31:0] macs_1_1_mac_io_res;
+  wire [15:0] macs_1_2_fifoA_io_pop_data;
   wire  macs_1_2_fifoA_io_pop_valid;
   wire  macs_1_2_fifoA_io_full;
   wire  macs_1_2_fifoA_io_empty;
-  wire [7:0] macs_1_2_fifoB_io_pop_data;
+  wire [15:0] macs_1_2_fifoB_io_pop_data;
   wire  macs_1_2_fifoB_io_pop_valid;
   wire  macs_1_2_fifoB_io_full;
   wire  macs_1_2_fifoB_io_empty;
-  wire [15:0] macs_1_2_mac_io_res;
-  wire [7:0] macs_1_3_fifoA_io_pop_data;
+  wire [31:0] macs_1_2_mac_io_res;
+  wire [15:0] macs_1_3_fifoA_io_pop_data;
   wire  macs_1_3_fifoA_io_pop_valid;
   wire  macs_1_3_fifoA_io_full;
   wire  macs_1_3_fifoA_io_empty;
-  wire [7:0] macs_1_3_fifoB_io_pop_data;
+  wire [15:0] macs_1_3_fifoB_io_pop_data;
   wire  macs_1_3_fifoB_io_pop_valid;
   wire  macs_1_3_fifoB_io_full;
   wire  macs_1_3_fifoB_io_empty;
-  wire [15:0] macs_1_3_mac_io_res;
-  wire [7:0] macs_1_4_fifoA_io_pop_data;
+  wire [31:0] macs_1_3_mac_io_res;
+  wire [15:0] macs_1_4_fifoA_io_pop_data;
   wire  macs_1_4_fifoA_io_pop_valid;
   wire  macs_1_4_fifoA_io_full;
   wire  macs_1_4_fifoA_io_empty;
-  wire [7:0] macs_1_4_fifoB_io_pop_data;
+  wire [15:0] macs_1_4_fifoB_io_pop_data;
   wire  macs_1_4_fifoB_io_pop_valid;
   wire  macs_1_4_fifoB_io_full;
   wire  macs_1_4_fifoB_io_empty;
-  wire [15:0] macs_1_4_mac_io_res;
-  wire [7:0] macs_2_0_fifoA_io_pop_data;
+  wire [31:0] macs_1_4_mac_io_res;
+  wire [15:0] macs_2_0_fifoA_io_pop_data;
   wire  macs_2_0_fifoA_io_pop_valid;
   wire  macs_2_0_fifoA_io_full;
   wire  macs_2_0_fifoA_io_empty;
-  wire [7:0] macs_2_0_fifoB_io_pop_data;
+  wire [15:0] macs_2_0_fifoB_io_pop_data;
   wire  macs_2_0_fifoB_io_pop_valid;
   wire  macs_2_0_fifoB_io_full;
   wire  macs_2_0_fifoB_io_empty;
-  wire [15:0] macs_2_0_mac_io_res;
-  wire [7:0] macs_2_1_fifoA_io_pop_data;
+  wire [31:0] macs_2_0_mac_io_res;
+  wire [15:0] macs_2_1_fifoA_io_pop_data;
   wire  macs_2_1_fifoA_io_pop_valid;
   wire  macs_2_1_fifoA_io_full;
   wire  macs_2_1_fifoA_io_empty;
-  wire [7:0] macs_2_1_fifoB_io_pop_data;
+  wire [15:0] macs_2_1_fifoB_io_pop_data;
   wire  macs_2_1_fifoB_io_pop_valid;
   wire  macs_2_1_fifoB_io_full;
   wire  macs_2_1_fifoB_io_empty;
-  wire [15:0] macs_2_1_mac_io_res;
-  wire [7:0] macs_2_2_fifoA_io_pop_data;
+  wire [31:0] macs_2_1_mac_io_res;
+  wire [15:0] macs_2_2_fifoA_io_pop_data;
   wire  macs_2_2_fifoA_io_pop_valid;
   wire  macs_2_2_fifoA_io_full;
   wire  macs_2_2_fifoA_io_empty;
-  wire [7:0] macs_2_2_fifoB_io_pop_data;
+  wire [15:0] macs_2_2_fifoB_io_pop_data;
   wire  macs_2_2_fifoB_io_pop_valid;
   wire  macs_2_2_fifoB_io_full;
   wire  macs_2_2_fifoB_io_empty;
-  wire [15:0] macs_2_2_mac_io_res;
-  wire [7:0] macs_2_3_fifoA_io_pop_data;
+  wire [31:0] macs_2_2_mac_io_res;
+  wire [15:0] macs_2_3_fifoA_io_pop_data;
   wire  macs_2_3_fifoA_io_pop_valid;
   wire  macs_2_3_fifoA_io_full;
   wire  macs_2_3_fifoA_io_empty;
-  wire [7:0] macs_2_3_fifoB_io_pop_data;
+  wire [15:0] macs_2_3_fifoB_io_pop_data;
   wire  macs_2_3_fifoB_io_pop_valid;
   wire  macs_2_3_fifoB_io_full;
   wire  macs_2_3_fifoB_io_empty;
-  wire [15:0] macs_2_3_mac_io_res;
-  wire [7:0] macs_2_4_fifoA_io_pop_data;
+  wire [31:0] macs_2_3_mac_io_res;
+  wire [15:0] macs_2_4_fifoA_io_pop_data;
   wire  macs_2_4_fifoA_io_pop_valid;
   wire  macs_2_4_fifoA_io_full;
   wire  macs_2_4_fifoA_io_empty;
-  wire [7:0] macs_2_4_fifoB_io_pop_data;
+  wire [15:0] macs_2_4_fifoB_io_pop_data;
   wire  macs_2_4_fifoB_io_pop_valid;
   wire  macs_2_4_fifoB_io_full;
   wire  macs_2_4_fifoB_io_empty;
-  wire [15:0] macs_2_4_mac_io_res;
-  wire [7:0] macs_3_0_fifoA_io_pop_data;
+  wire [31:0] macs_2_4_mac_io_res;
+  wire [15:0] macs_3_0_fifoA_io_pop_data;
   wire  macs_3_0_fifoA_io_pop_valid;
   wire  macs_3_0_fifoA_io_full;
   wire  macs_3_0_fifoA_io_empty;
-  wire [7:0] macs_3_0_fifoB_io_pop_data;
+  wire [15:0] macs_3_0_fifoB_io_pop_data;
   wire  macs_3_0_fifoB_io_pop_valid;
   wire  macs_3_0_fifoB_io_full;
   wire  macs_3_0_fifoB_io_empty;
-  wire [15:0] macs_3_0_mac_io_res;
-  wire [7:0] macs_3_1_fifoA_io_pop_data;
+  wire [31:0] macs_3_0_mac_io_res;
+  wire [15:0] macs_3_1_fifoA_io_pop_data;
   wire  macs_3_1_fifoA_io_pop_valid;
   wire  macs_3_1_fifoA_io_full;
   wire  macs_3_1_fifoA_io_empty;
-  wire [7:0] macs_3_1_fifoB_io_pop_data;
+  wire [15:0] macs_3_1_fifoB_io_pop_data;
   wire  macs_3_1_fifoB_io_pop_valid;
   wire  macs_3_1_fifoB_io_full;
   wire  macs_3_1_fifoB_io_empty;
-  wire [15:0] macs_3_1_mac_io_res;
-  wire [7:0] macs_3_2_fifoA_io_pop_data;
+  wire [31:0] macs_3_1_mac_io_res;
+  wire [15:0] macs_3_2_fifoA_io_pop_data;
   wire  macs_3_2_fifoA_io_pop_valid;
   wire  macs_3_2_fifoA_io_full;
   wire  macs_3_2_fifoA_io_empty;
-  wire [7:0] macs_3_2_fifoB_io_pop_data;
+  wire [15:0] macs_3_2_fifoB_io_pop_data;
   wire  macs_3_2_fifoB_io_pop_valid;
   wire  macs_3_2_fifoB_io_full;
   wire  macs_3_2_fifoB_io_empty;
-  wire [15:0] macs_3_2_mac_io_res;
-  wire [7:0] macs_3_3_fifoA_io_pop_data;
+  wire [31:0] macs_3_2_mac_io_res;
+  wire [15:0] macs_3_3_fifoA_io_pop_data;
   wire  macs_3_3_fifoA_io_pop_valid;
   wire  macs_3_3_fifoA_io_full;
   wire  macs_3_3_fifoA_io_empty;
-  wire [7:0] macs_3_3_fifoB_io_pop_data;
+  wire [15:0] macs_3_3_fifoB_io_pop_data;
   wire  macs_3_3_fifoB_io_pop_valid;
   wire  macs_3_3_fifoB_io_full;
   wire  macs_3_3_fifoB_io_empty;
-  wire [15:0] macs_3_3_mac_io_res;
-  wire [7:0] macs_3_4_fifoA_io_pop_data;
+  wire [31:0] macs_3_3_mac_io_res;
+  wire [15:0] macs_3_4_fifoA_io_pop_data;
   wire  macs_3_4_fifoA_io_pop_valid;
   wire  macs_3_4_fifoA_io_full;
   wire  macs_3_4_fifoA_io_empty;
-  wire [7:0] macs_3_4_fifoB_io_pop_data;
+  wire [15:0] macs_3_4_fifoB_io_pop_data;
   wire  macs_3_4_fifoB_io_pop_valid;
   wire  macs_3_4_fifoB_io_full;
   wire  macs_3_4_fifoB_io_empty;
-  wire [15:0] macs_3_4_mac_io_res;
-  wire [7:0] macs_4_0_fifoA_io_pop_data;
+  wire [31:0] macs_3_4_mac_io_res;
+  wire [15:0] macs_4_0_fifoA_io_pop_data;
   wire  macs_4_0_fifoA_io_pop_valid;
   wire  macs_4_0_fifoA_io_full;
   wire  macs_4_0_fifoA_io_empty;
-  wire [7:0] macs_4_0_fifoB_io_pop_data;
+  wire [15:0] macs_4_0_fifoB_io_pop_data;
   wire  macs_4_0_fifoB_io_pop_valid;
   wire  macs_4_0_fifoB_io_full;
   wire  macs_4_0_fifoB_io_empty;
-  wire [15:0] macs_4_0_mac_io_res;
-  wire [7:0] macs_4_1_fifoA_io_pop_data;
+  wire [31:0] macs_4_0_mac_io_res;
+  wire [15:0] macs_4_1_fifoA_io_pop_data;
   wire  macs_4_1_fifoA_io_pop_valid;
   wire  macs_4_1_fifoA_io_full;
   wire  macs_4_1_fifoA_io_empty;
-  wire [7:0] macs_4_1_fifoB_io_pop_data;
+  wire [15:0] macs_4_1_fifoB_io_pop_data;
   wire  macs_4_1_fifoB_io_pop_valid;
   wire  macs_4_1_fifoB_io_full;
   wire  macs_4_1_fifoB_io_empty;
-  wire [15:0] macs_4_1_mac_io_res;
-  wire [7:0] macs_4_2_fifoA_io_pop_data;
+  wire [31:0] macs_4_1_mac_io_res;
+  wire [15:0] macs_4_2_fifoA_io_pop_data;
   wire  macs_4_2_fifoA_io_pop_valid;
   wire  macs_4_2_fifoA_io_full;
   wire  macs_4_2_fifoA_io_empty;
-  wire [7:0] macs_4_2_fifoB_io_pop_data;
+  wire [15:0] macs_4_2_fifoB_io_pop_data;
   wire  macs_4_2_fifoB_io_pop_valid;
   wire  macs_4_2_fifoB_io_full;
   wire  macs_4_2_fifoB_io_empty;
-  wire [15:0] macs_4_2_mac_io_res;
-  wire [7:0] macs_4_3_fifoA_io_pop_data;
+  wire [31:0] macs_4_2_mac_io_res;
+  wire [15:0] macs_4_3_fifoA_io_pop_data;
   wire  macs_4_3_fifoA_io_pop_valid;
   wire  macs_4_3_fifoA_io_full;
   wire  macs_4_3_fifoA_io_empty;
-  wire [7:0] macs_4_3_fifoB_io_pop_data;
+  wire [15:0] macs_4_3_fifoB_io_pop_data;
   wire  macs_4_3_fifoB_io_pop_valid;
   wire  macs_4_3_fifoB_io_full;
   wire  macs_4_3_fifoB_io_empty;
-  wire [15:0] macs_4_3_mac_io_res;
-  wire [7:0] macs_4_4_fifoA_io_pop_data;
+  wire [31:0] macs_4_3_mac_io_res;
+  wire [15:0] macs_4_4_fifoA_io_pop_data;
   wire  macs_4_4_fifoA_io_pop_valid;
   wire  macs_4_4_fifoA_io_full;
   wire  macs_4_4_fifoA_io_empty;
-  wire [7:0] macs_4_4_fifoB_io_pop_data;
+  wire [15:0] macs_4_4_fifoB_io_pop_data;
   wire  macs_4_4_fifoB_io_pop_valid;
   wire  macs_4_4_fifoB_io_full;
   wire  macs_4_4_fifoB_io_empty;
-  wire [15:0] macs_4_4_mac_io_res;
+  wire [31:0] macs_4_4_mac_io_res;
   wire [0:0] _zz_176_;
   wire [2:0] _zz_177_;
   wire [0:0] _zz_178_;
@@ -1763,20 +1763,20 @@ module Pe (
   always @ (*) begin
     _zz_28_ = macs_0_0_fifoA_io_pop_data;
     if(last)begin
-      _zz_28_ = (_zz_1_ ? macs_0_0_fifoA_io_pop_data : (8'b00000000));
+      _zz_28_ = (_zz_1_ ? macs_0_0_fifoA_io_pop_data : (16'b0000000000000000));
     end
     if(io_clear)begin
-      _zz_28_ = (8'b00000000);
+      _zz_28_ = (16'b0000000000000000);
     end
   end
 
   always @ (*) begin
     _zz_29_ = macs_0_0_fifoB_io_pop_data;
     if(last)begin
-      _zz_29_ = (_zz_1_ ? macs_0_0_fifoB_io_pop_data : (8'b00000000));
+      _zz_29_ = (_zz_1_ ? macs_0_0_fifoB_io_pop_data : (16'b0000000000000000));
     end
     if(io_clear)begin
-      _zz_29_ = (8'b00000000);
+      _zz_29_ = (16'b0000000000000000);
     end
   end
 
@@ -1807,20 +1807,20 @@ module Pe (
   always @ (*) begin
     _zz_34_ = macs_0_1_fifoA_io_pop_data;
     if(last)begin
-      _zz_34_ = (_zz_2_ ? macs_0_1_fifoA_io_pop_data : (8'b00000000));
+      _zz_34_ = (_zz_2_ ? macs_0_1_fifoA_io_pop_data : (16'b0000000000000000));
     end
     if(io_clear)begin
-      _zz_34_ = (8'b00000000);
+      _zz_34_ = (16'b0000000000000000);
     end
   end
 
   always @ (*) begin
     _zz_35_ = macs_0_1_fifoB_io_pop_data;
     if(last)begin
-      _zz_35_ = (_zz_2_ ? macs_0_1_fifoB_io_pop_data : (8'b00000000));
+      _zz_35_ = (_zz_2_ ? macs_0_1_fifoB_io_pop_data : (16'b0000000000000000));
     end
     if(io_clear)begin
-      _zz_35_ = (8'b00000000);
+      _zz_35_ = (16'b0000000000000000);
     end
   end
 
@@ -1851,20 +1851,20 @@ module Pe (
   always @ (*) begin
     _zz_40_ = macs_0_2_fifoA_io_pop_data;
     if(last)begin
-      _zz_40_ = (_zz_3_ ? macs_0_2_fifoA_io_pop_data : (8'b00000000));
+      _zz_40_ = (_zz_3_ ? macs_0_2_fifoA_io_pop_data : (16'b0000000000000000));
     end
     if(io_clear)begin
-      _zz_40_ = (8'b00000000);
+      _zz_40_ = (16'b0000000000000000);
     end
   end
 
   always @ (*) begin
     _zz_41_ = macs_0_2_fifoB_io_pop_data;
     if(last)begin
-      _zz_41_ = (_zz_3_ ? macs_0_2_fifoB_io_pop_data : (8'b00000000));
+      _zz_41_ = (_zz_3_ ? macs_0_2_fifoB_io_pop_data : (16'b0000000000000000));
     end
     if(io_clear)begin
-      _zz_41_ = (8'b00000000);
+      _zz_41_ = (16'b0000000000000000);
     end
   end
 
@@ -1895,20 +1895,20 @@ module Pe (
   always @ (*) begin
     _zz_46_ = macs_0_3_fifoA_io_pop_data;
     if(last)begin
-      _zz_46_ = (_zz_4_ ? macs_0_3_fifoA_io_pop_data : (8'b00000000));
+      _zz_46_ = (_zz_4_ ? macs_0_3_fifoA_io_pop_data : (16'b0000000000000000));
     end
     if(io_clear)begin
-      _zz_46_ = (8'b00000000);
+      _zz_46_ = (16'b0000000000000000);
     end
   end
 
   always @ (*) begin
     _zz_47_ = macs_0_3_fifoB_io_pop_data;
     if(last)begin
-      _zz_47_ = (_zz_4_ ? macs_0_3_fifoB_io_pop_data : (8'b00000000));
+      _zz_47_ = (_zz_4_ ? macs_0_3_fifoB_io_pop_data : (16'b0000000000000000));
     end
     if(io_clear)begin
-      _zz_47_ = (8'b00000000);
+      _zz_47_ = (16'b0000000000000000);
     end
   end
 
@@ -1939,20 +1939,20 @@ module Pe (
   always @ (*) begin
     _zz_52_ = macs_0_4_fifoA_io_pop_data;
     if(last)begin
-      _zz_52_ = (_zz_5_ ? macs_0_4_fifoA_io_pop_data : (8'b00000000));
+      _zz_52_ = (_zz_5_ ? macs_0_4_fifoA_io_pop_data : (16'b0000000000000000));
     end
     if(io_clear)begin
-      _zz_52_ = (8'b00000000);
+      _zz_52_ = (16'b0000000000000000);
     end
   end
 
   always @ (*) begin
     _zz_53_ = macs_0_4_fifoB_io_pop_data;
     if(last)begin
-      _zz_53_ = (_zz_5_ ? macs_0_4_fifoB_io_pop_data : (8'b00000000));
+      _zz_53_ = (_zz_5_ ? macs_0_4_fifoB_io_pop_data : (16'b0000000000000000));
     end
     if(io_clear)begin
-      _zz_53_ = (8'b00000000);
+      _zz_53_ = (16'b0000000000000000);
     end
   end
 
@@ -1983,20 +1983,20 @@ module Pe (
   always @ (*) begin
     _zz_58_ = macs_1_0_fifoA_io_pop_data;
     if(last)begin
-      _zz_58_ = (_zz_6_ ? macs_1_0_fifoA_io_pop_data : (8'b00000000));
+      _zz_58_ = (_zz_6_ ? macs_1_0_fifoA_io_pop_data : (16'b0000000000000000));
     end
     if(io_clear)begin
-      _zz_58_ = (8'b00000000);
+      _zz_58_ = (16'b0000000000000000);
     end
   end
 
   always @ (*) begin
     _zz_59_ = macs_1_0_fifoB_io_pop_data;
     if(last)begin
-      _zz_59_ = (_zz_6_ ? macs_1_0_fifoB_io_pop_data : (8'b00000000));
+      _zz_59_ = (_zz_6_ ? macs_1_0_fifoB_io_pop_data : (16'b0000000000000000));
     end
     if(io_clear)begin
-      _zz_59_ = (8'b00000000);
+      _zz_59_ = (16'b0000000000000000);
     end
   end
 
@@ -2027,20 +2027,20 @@ module Pe (
   always @ (*) begin
     _zz_64_ = macs_1_1_fifoA_io_pop_data;
     if(last)begin
-      _zz_64_ = (_zz_7_ ? macs_1_1_fifoA_io_pop_data : (8'b00000000));
+      _zz_64_ = (_zz_7_ ? macs_1_1_fifoA_io_pop_data : (16'b0000000000000000));
     end
     if(io_clear)begin
-      _zz_64_ = (8'b00000000);
+      _zz_64_ = (16'b0000000000000000);
     end
   end
 
   always @ (*) begin
     _zz_65_ = macs_1_1_fifoB_io_pop_data;
     if(last)begin
-      _zz_65_ = (_zz_7_ ? macs_1_1_fifoB_io_pop_data : (8'b00000000));
+      _zz_65_ = (_zz_7_ ? macs_1_1_fifoB_io_pop_data : (16'b0000000000000000));
     end
     if(io_clear)begin
-      _zz_65_ = (8'b00000000);
+      _zz_65_ = (16'b0000000000000000);
     end
   end
 
@@ -2071,20 +2071,20 @@ module Pe (
   always @ (*) begin
     _zz_70_ = macs_1_2_fifoA_io_pop_data;
     if(last)begin
-      _zz_70_ = (_zz_8_ ? macs_1_2_fifoA_io_pop_data : (8'b00000000));
+      _zz_70_ = (_zz_8_ ? macs_1_2_fifoA_io_pop_data : (16'b0000000000000000));
     end
     if(io_clear)begin
-      _zz_70_ = (8'b00000000);
+      _zz_70_ = (16'b0000000000000000);
     end
   end
 
   always @ (*) begin
     _zz_71_ = macs_1_2_fifoB_io_pop_data;
     if(last)begin
-      _zz_71_ = (_zz_8_ ? macs_1_2_fifoB_io_pop_data : (8'b00000000));
+      _zz_71_ = (_zz_8_ ? macs_1_2_fifoB_io_pop_data : (16'b0000000000000000));
     end
     if(io_clear)begin
-      _zz_71_ = (8'b00000000);
+      _zz_71_ = (16'b0000000000000000);
     end
   end
 
@@ -2115,20 +2115,20 @@ module Pe (
   always @ (*) begin
     _zz_76_ = macs_1_3_fifoA_io_pop_data;
     if(last)begin
-      _zz_76_ = (_zz_9_ ? macs_1_3_fifoA_io_pop_data : (8'b00000000));
+      _zz_76_ = (_zz_9_ ? macs_1_3_fifoA_io_pop_data : (16'b0000000000000000));
     end
     if(io_clear)begin
-      _zz_76_ = (8'b00000000);
+      _zz_76_ = (16'b0000000000000000);
     end
   end
 
   always @ (*) begin
     _zz_77_ = macs_1_3_fifoB_io_pop_data;
     if(last)begin
-      _zz_77_ = (_zz_9_ ? macs_1_3_fifoB_io_pop_data : (8'b00000000));
+      _zz_77_ = (_zz_9_ ? macs_1_3_fifoB_io_pop_data : (16'b0000000000000000));
     end
     if(io_clear)begin
-      _zz_77_ = (8'b00000000);
+      _zz_77_ = (16'b0000000000000000);
     end
   end
 
@@ -2159,20 +2159,20 @@ module Pe (
   always @ (*) begin
     _zz_82_ = macs_1_4_fifoA_io_pop_data;
     if(last)begin
-      _zz_82_ = (_zz_10_ ? macs_1_4_fifoA_io_pop_data : (8'b00000000));
+      _zz_82_ = (_zz_10_ ? macs_1_4_fifoA_io_pop_data : (16'b0000000000000000));
     end
     if(io_clear)begin
-      _zz_82_ = (8'b00000000);
+      _zz_82_ = (16'b0000000000000000);
     end
   end
 
   always @ (*) begin
     _zz_83_ = macs_1_4_fifoB_io_pop_data;
     if(last)begin
-      _zz_83_ = (_zz_10_ ? macs_1_4_fifoB_io_pop_data : (8'b00000000));
+      _zz_83_ = (_zz_10_ ? macs_1_4_fifoB_io_pop_data : (16'b0000000000000000));
     end
     if(io_clear)begin
-      _zz_83_ = (8'b00000000);
+      _zz_83_ = (16'b0000000000000000);
     end
   end
 
@@ -2203,20 +2203,20 @@ module Pe (
   always @ (*) begin
     _zz_88_ = macs_2_0_fifoA_io_pop_data;
     if(last)begin
-      _zz_88_ = (_zz_11_ ? macs_2_0_fifoA_io_pop_data : (8'b00000000));
+      _zz_88_ = (_zz_11_ ? macs_2_0_fifoA_io_pop_data : (16'b0000000000000000));
     end
     if(io_clear)begin
-      _zz_88_ = (8'b00000000);
+      _zz_88_ = (16'b0000000000000000);
     end
   end
 
   always @ (*) begin
     _zz_89_ = macs_2_0_fifoB_io_pop_data;
     if(last)begin
-      _zz_89_ = (_zz_11_ ? macs_2_0_fifoB_io_pop_data : (8'b00000000));
+      _zz_89_ = (_zz_11_ ? macs_2_0_fifoB_io_pop_data : (16'b0000000000000000));
     end
     if(io_clear)begin
-      _zz_89_ = (8'b00000000);
+      _zz_89_ = (16'b0000000000000000);
     end
   end
 
@@ -2247,20 +2247,20 @@ module Pe (
   always @ (*) begin
     _zz_94_ = macs_2_1_fifoA_io_pop_data;
     if(last)begin
-      _zz_94_ = (_zz_12_ ? macs_2_1_fifoA_io_pop_data : (8'b00000000));
+      _zz_94_ = (_zz_12_ ? macs_2_1_fifoA_io_pop_data : (16'b0000000000000000));
     end
     if(io_clear)begin
-      _zz_94_ = (8'b00000000);
+      _zz_94_ = (16'b0000000000000000);
     end
   end
 
   always @ (*) begin
     _zz_95_ = macs_2_1_fifoB_io_pop_data;
     if(last)begin
-      _zz_95_ = (_zz_12_ ? macs_2_1_fifoB_io_pop_data : (8'b00000000));
+      _zz_95_ = (_zz_12_ ? macs_2_1_fifoB_io_pop_data : (16'b0000000000000000));
     end
     if(io_clear)begin
-      _zz_95_ = (8'b00000000);
+      _zz_95_ = (16'b0000000000000000);
     end
   end
 
@@ -2291,20 +2291,20 @@ module Pe (
   always @ (*) begin
     _zz_100_ = macs_2_2_fifoA_io_pop_data;
     if(last)begin
-      _zz_100_ = (_zz_13_ ? macs_2_2_fifoA_io_pop_data : (8'b00000000));
+      _zz_100_ = (_zz_13_ ? macs_2_2_fifoA_io_pop_data : (16'b0000000000000000));
     end
     if(io_clear)begin
-      _zz_100_ = (8'b00000000);
+      _zz_100_ = (16'b0000000000000000);
     end
   end
 
   always @ (*) begin
     _zz_101_ = macs_2_2_fifoB_io_pop_data;
     if(last)begin
-      _zz_101_ = (_zz_13_ ? macs_2_2_fifoB_io_pop_data : (8'b00000000));
+      _zz_101_ = (_zz_13_ ? macs_2_2_fifoB_io_pop_data : (16'b0000000000000000));
     end
     if(io_clear)begin
-      _zz_101_ = (8'b00000000);
+      _zz_101_ = (16'b0000000000000000);
     end
   end
 
@@ -2335,20 +2335,20 @@ module Pe (
   always @ (*) begin
     _zz_106_ = macs_2_3_fifoA_io_pop_data;
     if(last)begin
-      _zz_106_ = (_zz_14_ ? macs_2_3_fifoA_io_pop_data : (8'b00000000));
+      _zz_106_ = (_zz_14_ ? macs_2_3_fifoA_io_pop_data : (16'b0000000000000000));
     end
     if(io_clear)begin
-      _zz_106_ = (8'b00000000);
+      _zz_106_ = (16'b0000000000000000);
     end
   end
 
   always @ (*) begin
     _zz_107_ = macs_2_3_fifoB_io_pop_data;
     if(last)begin
-      _zz_107_ = (_zz_14_ ? macs_2_3_fifoB_io_pop_data : (8'b00000000));
+      _zz_107_ = (_zz_14_ ? macs_2_3_fifoB_io_pop_data : (16'b0000000000000000));
     end
     if(io_clear)begin
-      _zz_107_ = (8'b00000000);
+      _zz_107_ = (16'b0000000000000000);
     end
   end
 
@@ -2379,20 +2379,20 @@ module Pe (
   always @ (*) begin
     _zz_112_ = macs_2_4_fifoA_io_pop_data;
     if(last)begin
-      _zz_112_ = (_zz_15_ ? macs_2_4_fifoA_io_pop_data : (8'b00000000));
+      _zz_112_ = (_zz_15_ ? macs_2_4_fifoA_io_pop_data : (16'b0000000000000000));
     end
     if(io_clear)begin
-      _zz_112_ = (8'b00000000);
+      _zz_112_ = (16'b0000000000000000);
     end
   end
 
   always @ (*) begin
     _zz_113_ = macs_2_4_fifoB_io_pop_data;
     if(last)begin
-      _zz_113_ = (_zz_15_ ? macs_2_4_fifoB_io_pop_data : (8'b00000000));
+      _zz_113_ = (_zz_15_ ? macs_2_4_fifoB_io_pop_data : (16'b0000000000000000));
     end
     if(io_clear)begin
-      _zz_113_ = (8'b00000000);
+      _zz_113_ = (16'b0000000000000000);
     end
   end
 
@@ -2423,20 +2423,20 @@ module Pe (
   always @ (*) begin
     _zz_118_ = macs_3_0_fifoA_io_pop_data;
     if(last)begin
-      _zz_118_ = (_zz_16_ ? macs_3_0_fifoA_io_pop_data : (8'b00000000));
+      _zz_118_ = (_zz_16_ ? macs_3_0_fifoA_io_pop_data : (16'b0000000000000000));
     end
     if(io_clear)begin
-      _zz_118_ = (8'b00000000);
+      _zz_118_ = (16'b0000000000000000);
     end
   end
 
   always @ (*) begin
     _zz_119_ = macs_3_0_fifoB_io_pop_data;
     if(last)begin
-      _zz_119_ = (_zz_16_ ? macs_3_0_fifoB_io_pop_data : (8'b00000000));
+      _zz_119_ = (_zz_16_ ? macs_3_0_fifoB_io_pop_data : (16'b0000000000000000));
     end
     if(io_clear)begin
-      _zz_119_ = (8'b00000000);
+      _zz_119_ = (16'b0000000000000000);
     end
   end
 
@@ -2467,20 +2467,20 @@ module Pe (
   always @ (*) begin
     _zz_124_ = macs_3_1_fifoA_io_pop_data;
     if(last)begin
-      _zz_124_ = (_zz_17_ ? macs_3_1_fifoA_io_pop_data : (8'b00000000));
+      _zz_124_ = (_zz_17_ ? macs_3_1_fifoA_io_pop_data : (16'b0000000000000000));
     end
     if(io_clear)begin
-      _zz_124_ = (8'b00000000);
+      _zz_124_ = (16'b0000000000000000);
     end
   end
 
   always @ (*) begin
     _zz_125_ = macs_3_1_fifoB_io_pop_data;
     if(last)begin
-      _zz_125_ = (_zz_17_ ? macs_3_1_fifoB_io_pop_data : (8'b00000000));
+      _zz_125_ = (_zz_17_ ? macs_3_1_fifoB_io_pop_data : (16'b0000000000000000));
     end
     if(io_clear)begin
-      _zz_125_ = (8'b00000000);
+      _zz_125_ = (16'b0000000000000000);
     end
   end
 
@@ -2511,20 +2511,20 @@ module Pe (
   always @ (*) begin
     _zz_130_ = macs_3_2_fifoA_io_pop_data;
     if(last)begin
-      _zz_130_ = (_zz_18_ ? macs_3_2_fifoA_io_pop_data : (8'b00000000));
+      _zz_130_ = (_zz_18_ ? macs_3_2_fifoA_io_pop_data : (16'b0000000000000000));
     end
     if(io_clear)begin
-      _zz_130_ = (8'b00000000);
+      _zz_130_ = (16'b0000000000000000);
     end
   end
 
   always @ (*) begin
     _zz_131_ = macs_3_2_fifoB_io_pop_data;
     if(last)begin
-      _zz_131_ = (_zz_18_ ? macs_3_2_fifoB_io_pop_data : (8'b00000000));
+      _zz_131_ = (_zz_18_ ? macs_3_2_fifoB_io_pop_data : (16'b0000000000000000));
     end
     if(io_clear)begin
-      _zz_131_ = (8'b00000000);
+      _zz_131_ = (16'b0000000000000000);
     end
   end
 
@@ -2555,20 +2555,20 @@ module Pe (
   always @ (*) begin
     _zz_136_ = macs_3_3_fifoA_io_pop_data;
     if(last)begin
-      _zz_136_ = (_zz_19_ ? macs_3_3_fifoA_io_pop_data : (8'b00000000));
+      _zz_136_ = (_zz_19_ ? macs_3_3_fifoA_io_pop_data : (16'b0000000000000000));
     end
     if(io_clear)begin
-      _zz_136_ = (8'b00000000);
+      _zz_136_ = (16'b0000000000000000);
     end
   end
 
   always @ (*) begin
     _zz_137_ = macs_3_3_fifoB_io_pop_data;
     if(last)begin
-      _zz_137_ = (_zz_19_ ? macs_3_3_fifoB_io_pop_data : (8'b00000000));
+      _zz_137_ = (_zz_19_ ? macs_3_3_fifoB_io_pop_data : (16'b0000000000000000));
     end
     if(io_clear)begin
-      _zz_137_ = (8'b00000000);
+      _zz_137_ = (16'b0000000000000000);
     end
   end
 
@@ -2599,20 +2599,20 @@ module Pe (
   always @ (*) begin
     _zz_142_ = macs_3_4_fifoA_io_pop_data;
     if(last)begin
-      _zz_142_ = (_zz_20_ ? macs_3_4_fifoA_io_pop_data : (8'b00000000));
+      _zz_142_ = (_zz_20_ ? macs_3_4_fifoA_io_pop_data : (16'b0000000000000000));
     end
     if(io_clear)begin
-      _zz_142_ = (8'b00000000);
+      _zz_142_ = (16'b0000000000000000);
     end
   end
 
   always @ (*) begin
     _zz_143_ = macs_3_4_fifoB_io_pop_data;
     if(last)begin
-      _zz_143_ = (_zz_20_ ? macs_3_4_fifoB_io_pop_data : (8'b00000000));
+      _zz_143_ = (_zz_20_ ? macs_3_4_fifoB_io_pop_data : (16'b0000000000000000));
     end
     if(io_clear)begin
-      _zz_143_ = (8'b00000000);
+      _zz_143_ = (16'b0000000000000000);
     end
   end
 
@@ -2643,20 +2643,20 @@ module Pe (
   always @ (*) begin
     _zz_148_ = macs_4_0_fifoA_io_pop_data;
     if(last)begin
-      _zz_148_ = (_zz_21_ ? macs_4_0_fifoA_io_pop_data : (8'b00000000));
+      _zz_148_ = (_zz_21_ ? macs_4_0_fifoA_io_pop_data : (16'b0000000000000000));
     end
     if(io_clear)begin
-      _zz_148_ = (8'b00000000);
+      _zz_148_ = (16'b0000000000000000);
     end
   end
 
   always @ (*) begin
     _zz_149_ = macs_4_0_fifoB_io_pop_data;
     if(last)begin
-      _zz_149_ = (_zz_21_ ? macs_4_0_fifoB_io_pop_data : (8'b00000000));
+      _zz_149_ = (_zz_21_ ? macs_4_0_fifoB_io_pop_data : (16'b0000000000000000));
     end
     if(io_clear)begin
-      _zz_149_ = (8'b00000000);
+      _zz_149_ = (16'b0000000000000000);
     end
   end
 
@@ -2687,20 +2687,20 @@ module Pe (
   always @ (*) begin
     _zz_154_ = macs_4_1_fifoA_io_pop_data;
     if(last)begin
-      _zz_154_ = (_zz_22_ ? macs_4_1_fifoA_io_pop_data : (8'b00000000));
+      _zz_154_ = (_zz_22_ ? macs_4_1_fifoA_io_pop_data : (16'b0000000000000000));
     end
     if(io_clear)begin
-      _zz_154_ = (8'b00000000);
+      _zz_154_ = (16'b0000000000000000);
     end
   end
 
   always @ (*) begin
     _zz_155_ = macs_4_1_fifoB_io_pop_data;
     if(last)begin
-      _zz_155_ = (_zz_22_ ? macs_4_1_fifoB_io_pop_data : (8'b00000000));
+      _zz_155_ = (_zz_22_ ? macs_4_1_fifoB_io_pop_data : (16'b0000000000000000));
     end
     if(io_clear)begin
-      _zz_155_ = (8'b00000000);
+      _zz_155_ = (16'b0000000000000000);
     end
   end
 
@@ -2731,20 +2731,20 @@ module Pe (
   always @ (*) begin
     _zz_160_ = macs_4_2_fifoA_io_pop_data;
     if(last)begin
-      _zz_160_ = (_zz_23_ ? macs_4_2_fifoA_io_pop_data : (8'b00000000));
+      _zz_160_ = (_zz_23_ ? macs_4_2_fifoA_io_pop_data : (16'b0000000000000000));
     end
     if(io_clear)begin
-      _zz_160_ = (8'b00000000);
+      _zz_160_ = (16'b0000000000000000);
     end
   end
 
   always @ (*) begin
     _zz_161_ = macs_4_2_fifoB_io_pop_data;
     if(last)begin
-      _zz_161_ = (_zz_23_ ? macs_4_2_fifoB_io_pop_data : (8'b00000000));
+      _zz_161_ = (_zz_23_ ? macs_4_2_fifoB_io_pop_data : (16'b0000000000000000));
     end
     if(io_clear)begin
-      _zz_161_ = (8'b00000000);
+      _zz_161_ = (16'b0000000000000000);
     end
   end
 
@@ -2775,20 +2775,20 @@ module Pe (
   always @ (*) begin
     _zz_166_ = macs_4_3_fifoA_io_pop_data;
     if(last)begin
-      _zz_166_ = (_zz_24_ ? macs_4_3_fifoA_io_pop_data : (8'b00000000));
+      _zz_166_ = (_zz_24_ ? macs_4_3_fifoA_io_pop_data : (16'b0000000000000000));
     end
     if(io_clear)begin
-      _zz_166_ = (8'b00000000);
+      _zz_166_ = (16'b0000000000000000);
     end
   end
 
   always @ (*) begin
     _zz_167_ = macs_4_3_fifoB_io_pop_data;
     if(last)begin
-      _zz_167_ = (_zz_24_ ? macs_4_3_fifoB_io_pop_data : (8'b00000000));
+      _zz_167_ = (_zz_24_ ? macs_4_3_fifoB_io_pop_data : (16'b0000000000000000));
     end
     if(io_clear)begin
-      _zz_167_ = (8'b00000000);
+      _zz_167_ = (16'b0000000000000000);
     end
   end
 
@@ -2819,20 +2819,20 @@ module Pe (
   always @ (*) begin
     _zz_172_ = macs_4_4_fifoA_io_pop_data;
     if(last)begin
-      _zz_172_ = (_zz_25_ ? macs_4_4_fifoA_io_pop_data : (8'b00000000));
+      _zz_172_ = (_zz_25_ ? macs_4_4_fifoA_io_pop_data : (16'b0000000000000000));
     end
     if(io_clear)begin
-      _zz_172_ = (8'b00000000);
+      _zz_172_ = (16'b0000000000000000);
     end
   end
 
   always @ (*) begin
     _zz_173_ = macs_4_4_fifoB_io_pop_data;
     if(last)begin
-      _zz_173_ = (_zz_25_ ? macs_4_4_fifoB_io_pop_data : (8'b00000000));
+      _zz_173_ = (_zz_25_ ? macs_4_4_fifoB_io_pop_data : (16'b0000000000000000));
     end
     if(io_clear)begin
-      _zz_173_ = (8'b00000000);
+      _zz_173_ = (16'b0000000000000000);
     end
   end
 
@@ -2898,77 +2898,77 @@ endmodule
 module PeStream (
       input   streamA_valid,
       output  streamA_ready,
-      input  [7:0] streamA_payload,
+      input  [15:0] streamA_payload,
       input   streamB_valid,
       output  streamB_ready,
-      input  [7:0] streamB_payload,
+      input  [15:0] streamB_payload,
       output  streamR_valid,
       input   streamR_ready,
-      output [15:0] streamR_payload,
+      output [31:0] streamR_payload,
       input   clk,
       input   reset);
   reg  _zz_2_;
   reg  _zz_3_;
-  reg [15:0] _zz_4_;
-  wire [15:0] pe_1__io_results_0_0;
-  wire [15:0] pe_1__io_results_0_1;
-  wire [15:0] pe_1__io_results_0_2;
-  wire [15:0] pe_1__io_results_0_3;
-  wire [15:0] pe_1__io_results_0_4;
-  wire [15:0] pe_1__io_results_1_0;
-  wire [15:0] pe_1__io_results_1_1;
-  wire [15:0] pe_1__io_results_1_2;
-  wire [15:0] pe_1__io_results_1_3;
-  wire [15:0] pe_1__io_results_1_4;
-  wire [15:0] pe_1__io_results_2_0;
-  wire [15:0] pe_1__io_results_2_1;
-  wire [15:0] pe_1__io_results_2_2;
-  wire [15:0] pe_1__io_results_2_3;
-  wire [15:0] pe_1__io_results_2_4;
-  wire [15:0] pe_1__io_results_3_0;
-  wire [15:0] pe_1__io_results_3_1;
-  wire [15:0] pe_1__io_results_3_2;
-  wire [15:0] pe_1__io_results_3_3;
-  wire [15:0] pe_1__io_results_3_4;
-  wire [15:0] pe_1__io_results_4_0;
-  wire [15:0] pe_1__io_results_4_1;
-  wire [15:0] pe_1__io_results_4_2;
-  wire [15:0] pe_1__io_results_4_3;
-  wire [15:0] pe_1__io_results_4_4;
+  reg [31:0] _zz_4_;
+  wire [31:0] pe_1__io_results_0_0;
+  wire [31:0] pe_1__io_results_0_1;
+  wire [31:0] pe_1__io_results_0_2;
+  wire [31:0] pe_1__io_results_0_3;
+  wire [31:0] pe_1__io_results_0_4;
+  wire [31:0] pe_1__io_results_1_0;
+  wire [31:0] pe_1__io_results_1_1;
+  wire [31:0] pe_1__io_results_1_2;
+  wire [31:0] pe_1__io_results_1_3;
+  wire [31:0] pe_1__io_results_1_4;
+  wire [31:0] pe_1__io_results_2_0;
+  wire [31:0] pe_1__io_results_2_1;
+  wire [31:0] pe_1__io_results_2_2;
+  wire [31:0] pe_1__io_results_2_3;
+  wire [31:0] pe_1__io_results_2_4;
+  wire [31:0] pe_1__io_results_3_0;
+  wire [31:0] pe_1__io_results_3_1;
+  wire [31:0] pe_1__io_results_3_2;
+  wire [31:0] pe_1__io_results_3_3;
+  wire [31:0] pe_1__io_results_3_4;
+  wire [31:0] pe_1__io_results_4_0;
+  wire [31:0] pe_1__io_results_4_1;
+  wire [31:0] pe_1__io_results_4_2;
+  wire [31:0] pe_1__io_results_4_3;
+  wire [31:0] pe_1__io_results_4_4;
   wire  pe_1__io_done;
   wire  pe_1__io_last;
   wire  _zz_5_;
   wire [0:0] _zz_6_;
   wire [4:0] _zz_7_;
-  wire [7:0] payloadA;
-  wire [7:0] payloadB;
+  reg [15:0] payloadA;
+  reg [15:0] payloadB;
   wire  outBlocked;
   wire  done;
-  reg [15:0] resultStream_results_0;
-  reg [15:0] resultStream_results_1;
-  reg [15:0] resultStream_results_2;
-  reg [15:0] resultStream_results_3;
-  reg [15:0] resultStream_results_4;
-  reg [15:0] resultStream_results_5;
-  reg [15:0] resultStream_results_6;
-  reg [15:0] resultStream_results_7;
-  reg [15:0] resultStream_results_8;
-  reg [15:0] resultStream_results_9;
-  reg [15:0] resultStream_results_10;
-  reg [15:0] resultStream_results_11;
-  reg [15:0] resultStream_results_12;
-  reg [15:0] resultStream_results_13;
-  reg [15:0] resultStream_results_14;
-  reg [15:0] resultStream_results_15;
-  reg [15:0] resultStream_results_16;
-  reg [15:0] resultStream_results_17;
-  reg [15:0] resultStream_results_18;
-  reg [15:0] resultStream_results_19;
-  reg [15:0] resultStream_results_20;
-  reg [15:0] resultStream_results_21;
-  reg [15:0] resultStream_results_22;
-  reg [15:0] resultStream_results_23;
-  reg [15:0] resultStream_results_24;
+  reg [31:0] resultStream_results_0;
+  reg [31:0] resultStream_results_1;
+  reg [31:0] resultStream_results_2;
+  reg [31:0] resultStream_results_3;
+  reg [31:0] resultStream_results_4;
+  reg [31:0] resultStream_results_5;
+  reg [31:0] resultStream_results_6;
+  reg [31:0] resultStream_results_7;
+  reg [31:0] resultStream_results_8;
+  reg [31:0] resultStream_results_9;
+  reg [31:0] resultStream_results_10;
+  reg [31:0] resultStream_results_11;
+  reg [31:0] resultStream_results_12;
+  reg [31:0] resultStream_results_13;
+  reg [31:0] resultStream_results_14;
+  reg [31:0] resultStream_results_15;
+  reg [31:0] resultStream_results_16;
+  reg [31:0] resultStream_results_17;
+  reg [31:0] resultStream_results_18;
+  reg [31:0] resultStream_results_19;
+  reg [31:0] resultStream_results_20;
+  reg [31:0] resultStream_results_21;
+  reg [31:0] resultStream_results_22;
+  reg [31:0] resultStream_results_23;
+  reg [31:0] resultStream_results_24;
   reg  resultStream_counter_willIncrement;
   reg  resultStream_counter_willClear;
   reg [4:0] resultStream_counter_valueNext;
@@ -2976,9 +2976,9 @@ module PeStream (
   wire  resultStream_counter_willOverflowIfInc;
   wire  resultStream_counter_willOverflow;
   reg  resultStream_valid;
-  wire [15:0] _zz_1_;
-  reg [15:0] resultStream_payload;
-  reg [15:0] resultStream_payload_regNext;
+  wire [31:0] _zz_1_;
+  reg [31:0] resultStream_payload;
+  reg [31:0] resultStream_payload_regNext;
   reg  resultStream_valid_regNext;
   assign _zz_5_ = (pe_1__io_last || outBlocked);
   assign _zz_6_ = resultStream_counter_willIncrement;
@@ -3099,8 +3099,16 @@ module PeStream (
     endcase
   end
 
-  assign payloadA[7 : 0] = streamA_payload[7 : 0];
-  assign payloadB[7 : 0] = streamB_payload[7 : 0];
+  always @ (*) begin
+    payloadA[15 : 8] = streamA_payload[7 : 0];
+    payloadA[7 : 0] = streamA_payload[15 : 8];
+  end
+
+  always @ (*) begin
+    payloadB[15 : 8] = streamB_payload[7 : 0];
+    payloadB[7 : 0] = streamB_payload[15 : 8];
+  end
+
   always @ (*) begin
     _zz_2_ = streamA_valid;
     if(_zz_5_)begin
@@ -3148,8 +3156,10 @@ module PeStream (
 
   assign _zz_1_ = _zz_4_;
   always @ (*) begin
-    resultStream_payload[15 : 8] = _zz_1_[7 : 0];
-    resultStream_payload[7 : 0] = _zz_1_[15 : 8];
+    resultStream_payload[31 : 24] = _zz_1_[7 : 0];
+    resultStream_payload[23 : 16] = _zz_1_[15 : 8];
+    resultStream_payload[15 : 8] = _zz_1_[23 : 16];
+    resultStream_payload[7 : 0] = _zz_1_[31 : 24];
   end
 
   assign streamR_payload = resultStream_payload_regNext;
