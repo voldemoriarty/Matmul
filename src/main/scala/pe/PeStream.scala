@@ -76,10 +76,7 @@ class PeStream(cfg: PeCfg, swapInputEndian: Boolean = false, swapOutputEndian: B
     }
 
     // use to track if the result registers have valid data in them
-    val valid = Reg(Bool) init False
-
-    valid.setWhen(done)
-    valid.clearWhen(counter.willOverflow)
+    val valid = Reg(Bool) init False setWhen done clearWhen counter.willOverflow
 
     // when the slave is ready, send data
     val payload = if (swapOutputEndian) EndiannessSwap(results(counter)) else results(counter)
