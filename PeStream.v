@@ -1,5 +1,5 @@
 // Generator : SpinalHDL v1.3.8    git head : 57d97088b91271a094cebad32ed86479199955df
-// Date      : 18/03/2020, 13:53:47
+// Date      : 09/04/2020, 23:15:58
 // Component : PeStream
 
 
@@ -30,7 +30,7 @@ module Fifo (
   reg [3:0] count;
   wire  countLogic_push;
   wire  countLogic_pop;
-  reg [15:0] mem [0:4];
+  (* ramstyle = "mlab,no_rw_check" *) reg [15:0] mem [0:4];
   assign _zz_3_ = (io_push_en && (! io_full));
   assign _zz_4_ = (io_pop_en && (! io_empty));
   assign _zz_5_ = {countLogic_push,countLogic_pop};
