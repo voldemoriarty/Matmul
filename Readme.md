@@ -40,8 +40,8 @@ the computation and `N` more cycles to transfer the results
 
 | FPGA | PeConfig | Area | Fmax |
 | --- | --- | --- | ---|
-| Cyclone II | N = 5, 16 bit input, 32 bit output, mlab = false | 9,389 LEs, 50 9-bit Mults | 172.95 MHz |
-| Cyclone II | N = 5, 8 bit input, 16 bit output, mlab = false | 5,033 LEs, 25 9-bit Mults| 196.43 MHz |
+| Cyclone II | N = 5, 16 bit input, 32 bit output | 9,389 LEs, 50 9-bit Mults | 172.95 MHz |
+| Cyclone II | N = 5, 8 bit input, 16 bit output | 5,033 LEs, 25 9-bit Mults| 196.43 MHz |
 
 Numbers obtained from Quartus 13.0 with Optimization = Speed
 
