@@ -51,7 +51,7 @@ class Pe(cfg: PeCfg) extends Component {
   io.last   := last
 
   val macs = Array.tabulate(cfg.dim, cfg.dim)((i, j) => new Area {
-    val fifoA, fifoB = new Fifo(cfg.bits, cfg.dim, cfg.mlabAttr)
+    val fifoA, fifoB = new Fifo(cfg.bits, cfg.dim)
     val mac = new Mac(MacCfg(cfg.bits, resType.getBitsWidth))
 
     fifoA.readWhen(io.flowA, counters.ai === i)

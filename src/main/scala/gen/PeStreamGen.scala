@@ -38,12 +38,14 @@ object PeStreamGen extends App {
     print("Endian Swap Output (y/n): ")
     val sOut = readBoolean()
 
-    val cfg = pe.PeCfg(dim, inWidth, outWidth, mlabAttr = mlab)
+    val cfg = pe.PeCfg(dim, inWidth, outWidth)
     SpinalVerilog(new pe.PeStream(cfg, sIn, sOut))
   }
 
   override def main(args: Array[String]): Unit = {
-    val conf = new Conf(args)
+    val defArgs = Array("-i")
+
+    val conf = new Conf(if (args.isEmpty) defArgs else args)
 
     try {
       if (conf.int()) {
@@ -57,7 +59,7 @@ object PeStreamGen extends App {
         val dim   = conf.dim()
 
         println(s"Creating PE of dim: $dim, in: $in bits, out: $out bits, mlab: $mlab")
-        SpinalVerilog(new pe.PeStream(pe.PeCfg(dim, in, out, mlabAttr = mlab), sie, soe))
+        SpinalVerilog(new pe.PeStream(pe.PeCfg(dim, in, out), sie, soe))
       }
 
     } catch {

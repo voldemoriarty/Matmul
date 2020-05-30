@@ -4,7 +4,7 @@ import spinal.core._
 import spinal.core.sim._
 import spinal.lib._
 
-class Fifo(val dataWidth: Int = 32, val maxSize: Int = 32, val mlab: Boolean = false) extends Component {
+class Fifo(val dataWidth: Int = 32, val maxSize: Int = 32) extends Component {
   val io = new Bundle {
     val push = new Bundle {
       val data  = in UInt(dataWidth bits)
@@ -51,8 +51,7 @@ class Fifo(val dataWidth: Int = 32, val maxSize: Int = 32, val mlab: Boolean = f
   def nextWAddr = if (mod) nextCond(wPtr) else wPtr + 1
   def nextRAddr = if (mod) nextCond(rPtr) else rPtr + 1
 
-  val mem = new Mem(UInt(dataWidth bits), maxSize)
-  if (mlab) mem.addAttribute("ramstyle", "mlab,no_rw_check")
+  val mem = Vec(Reg(UInt(dataWidth bits)), maxSize)
 
   val pushLogic = new Area {
     import io._
@@ -66,7 +65,7 @@ class Fifo(val dataWidth: Int = 32, val maxSize: Int = 32, val mlab: Boolean = f
   val popLogic = new Area {
     import io._
     // return valid data when fifo is not empty
-    pop.data := mem.readAsync(rPtr, writeFirst)
+    pop.data := mem.read(rPtr)
     when (pop.en && !io.empty) {
       pop.valid := True
       rPtr  := nextRAddr
