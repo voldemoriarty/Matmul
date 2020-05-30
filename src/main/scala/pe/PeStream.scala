@@ -5,6 +5,15 @@ import spinal.lib._
 import scala.collection.mutable
 
 //noinspection FieldFromDelayedInit
+/**
+ * A streaming wrapper over the MAC Array PE
+ * The streams are directly pin compatible with avalon-st
+ * Putting Backpressure on the output stream directly halts the
+ * input streams
+ * @param cfg               Configuration (IO width)
+ * @param swapInputEndian   Swap endianness of input (must be multiple of 8 if true)
+ * @param swapOutputEndian  Swap endianness of output
+ */
 class PeStream(cfg: PeCfg, swapInputEndian: Boolean = false, swapOutputEndian: Boolean = false) extends Component {
   val pe = new Pe(cfg)
 
