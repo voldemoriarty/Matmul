@@ -8,7 +8,6 @@ class Conf(args: Seq[String]) extends ScallopConf(args) {
   val dim   = opt[Int](descr = "Dimension of PE MAC Array")
   val in    = opt[Int](descr = "Input bit width")
   val out   = opt[Int](descr = "Output bit width")
-  val mlab  = opt[Boolean](descr = "Add MLAB attribute (ramstyle=\"mlab,no_rw_check\")")
   val sie   = opt[Boolean](descr = "Swap Endian at input port")
   val soe   = opt[Boolean](descr = "Swap Endian at output port")
 
@@ -28,9 +27,6 @@ object PeStreamGen extends App {
 
     print("Width of output: ")
     val outWidth = readInt()
-
-    print("Add MLAB attribute (Altera devices)(y/n): ")
-    val mlab = readBoolean()
 
     print("Endian Swap Input (y/n): ")
     val sIn = readBoolean()
@@ -53,12 +49,11 @@ object PeStreamGen extends App {
       } else {
         val in    = conf.in()
         val out   = conf.out()
-        val mlab  = conf.mlab()
         val sie   = conf.sie()
         val soe   = conf.soe()
         val dim   = conf.dim()
 
-        println(s"Creating PE of dim: $dim, in: $in bits, out: $out bits, mlab: $mlab")
+        println(s"Creating PE of dim: $dim, in: $in bits, out: $out bits")
         SpinalVerilog(new pe.PeStream(pe.PeCfg(dim, in, out), sie, soe))
       }
 
