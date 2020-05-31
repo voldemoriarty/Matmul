@@ -3,6 +3,12 @@ import spinal.core._
 import spinal.lib._
 
 //noinspection FieldFromDelayedInit
+/**
+  * Well this doesn't work.
+  *
+  * @param cfg        Configuration of PE
+  * @param busWidth   Bus width of the data bus and CSR bus
+  */
 class PeMM(cfg: PeCfg, busWidth: Int = 32) extends Component {
   val rAddrWidth = 2 * log2Up(cfg.dim)
   val io = new Bundle {
