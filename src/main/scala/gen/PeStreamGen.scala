@@ -4,14 +4,14 @@ import scala.io.StdIn._
 import org.rogach.scallop._
 
 class Conf(args: Seq[String]) extends ScallopConf(args) {
-  val int   = opt[Boolean](descr = "Run in interactive mode, all other flags ignored")
-  val dim   = opt[Int](descr = "Dimension of PE MAC Array")
   val in    = opt[Int](descr = "Input bit width")
+  val int   = opt[Boolean](descr = "Run in interactive mode, all other flags ignored", noshort = true)
+  val dim   = opt[Int](descr = "Dimension of PE MAC Array")
   val out   = opt[Int](descr = "Output bit width")
-  val sie   = opt[Boolean](descr = "Swap Endian at input port")
-  val soe   = opt[Boolean](descr = "Swap Endian at output port")
+  val sie   = opt[Boolean](descr = "Swap Endian at input port", noshort = true)
+  val soe   = opt[Boolean](descr = "Swap Endian at output port", noshort = true)
 
-  banner("matmult: Generate a Matrix Multiplier PE with streaming inputs and output\n")
+  banner("Matmul: Generate a Matrix Multiplier PE with streaming inputs and output\n")
   verify()
 }
 

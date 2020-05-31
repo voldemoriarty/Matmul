@@ -3,15 +3,15 @@ package mac
 import spinal.core._
 import fifo._
 
-class Mac(cfg: MacCfg = MacCfg()) extends Component {
+class Mac(cfg: MacCfg = MacCfg()) extends Area {
   def Data  = UInt(cfg.bits bits)
   def Res   = UInt(cfg.resWidth bits)
 
   val io = new Bundle {
-    val a,b = in(Data)
-    val res = out(Res)
-    val clr = in Bool
-    val en  = in Bool
+    val a,b = Data
+    val res = Res
+    val clr = Bool
+    val en  = Bool
   }
 
   def attachFifo(a: Fifo, b: Fifo): Unit = {
