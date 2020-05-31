@@ -11,7 +11,7 @@ class Conf(args: Seq[String]) extends ScallopConf(args) {
   val sie   = opt[Boolean](descr = "Swap Endian at input port", noshort = true)
   val soe   = opt[Boolean](descr = "Swap Endian at output port", noshort = true)
 
-  banner("matmult: Generate a Matrix Multiplier PE with streaming inputs and output\n")
+  banner("Matmul: Generate a Matrix Multiplier PE with streaming inputs and output\n")
   verify()
 }
 
