@@ -39,7 +39,7 @@ object PeStreamGen extends App {
   }
 
   override def main(args: Array[String]): Unit = {
-    val defArgs = Array("-i")
+    val defArgs = Array("--int")
 
     val conf = new Conf(if (args.isEmpty) defArgs else args)
 

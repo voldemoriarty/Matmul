@@ -1,5 +1,5 @@
 // Generator : SpinalHDL v1.4.0    git head : ecb5a80b713566f417ea3ea061f9969e73770a7f
-// Date      : 31/05/2020, 11:50:28
+// Date      : 03/06/2020, 15:52:01
 // Component : PeStream
 
 
@@ -183,31 +183,31 @@ module Pe (
   input      [15:0]   io_flowA_payload,
   input               io_flowB_valid,
   input      [15:0]   io_flowB_payload,
-  output     [15:0]   io_results_0_0,
-  output     [15:0]   io_results_0_1,
-  output     [15:0]   io_results_0_2,
-  output     [15:0]   io_results_0_3,
-  output     [15:0]   io_results_0_4,
-  output     [15:0]   io_results_1_0,
-  output     [15:0]   io_results_1_1,
-  output     [15:0]   io_results_1_2,
-  output     [15:0]   io_results_1_3,
-  output     [15:0]   io_results_1_4,
-  output     [15:0]   io_results_2_0,
-  output     [15:0]   io_results_2_1,
-  output     [15:0]   io_results_2_2,
-  output     [15:0]   io_results_2_3,
-  output     [15:0]   io_results_2_4,
-  output     [15:0]   io_results_3_0,
-  output     [15:0]   io_results_3_1,
-  output     [15:0]   io_results_3_2,
-  output     [15:0]   io_results_3_3,
-  output     [15:0]   io_results_3_4,
-  output     [15:0]   io_results_4_0,
-  output     [15:0]   io_results_4_1,
-  output     [15:0]   io_results_4_2,
-  output     [15:0]   io_results_4_3,
-  output     [15:0]   io_results_4_4,
+  output     [31:0]   io_results_0_0,
+  output     [31:0]   io_results_0_1,
+  output     [31:0]   io_results_0_2,
+  output     [31:0]   io_results_0_3,
+  output     [31:0]   io_results_0_4,
+  output     [31:0]   io_results_1_0,
+  output     [31:0]   io_results_1_1,
+  output     [31:0]   io_results_1_2,
+  output     [31:0]   io_results_1_3,
+  output     [31:0]   io_results_1_4,
+  output     [31:0]   io_results_2_0,
+  output     [31:0]   io_results_2_1,
+  output     [31:0]   io_results_2_2,
+  output     [31:0]   io_results_2_3,
+  output     [31:0]   io_results_2_4,
+  output     [31:0]   io_results_3_0,
+  output     [31:0]   io_results_3_1,
+  output     [31:0]   io_results_3_2,
+  output     [31:0]   io_results_3_3,
+  output     [31:0]   io_results_3_4,
+  output     [31:0]   io_results_4_0,
+  output     [31:0]   io_results_4_1,
+  output     [31:0]   io_results_4_2,
+  output     [31:0]   io_results_4_3,
+  output     [31:0]   io_results_4_4,
   input               io_clear,
   output              io_done,
   output              io_last,
@@ -531,452 +531,452 @@ module Pe (
   reg                 edge_1__delay_3;
   reg        [15:0]   macs_0_0_mac_io_a;
   reg        [15:0]   macs_0_0_mac_io_b;
-  wire       [15:0]   macs_0_0_mac_io_res;
+  wire       [31:0]   macs_0_0_mac_io_res;
   reg                 macs_0_0_mac_io_clr;
   reg                 macs_0_0_mac_io_en;
-  reg        [15:0]   macs_0_0_mac_impl_or;
+  reg        [31:0]   macs_0_0_mac_impl_or;
   wire       [15:0]   macs_0_0_mac_impl_a;
   wire       [15:0]   macs_0_0_mac_impl_b;
-  wire       [15:0]   macs_0_0_mac_impl_c;
+  wire       [31:0]   macs_0_0_mac_impl_c;
   wire                macs_0_0_mac_impl_clr;
   wire                macs_0_0_mac_impl_en;
   reg        [15:0]   macs_0_0_mac_impl_ar;
   reg        [15:0]   macs_0_0_mac_impl_br;
   reg                 macs_0_0_mac_impl_sr;
-  reg        [15:0]   macs_0_0_mac_impl_mr;
-  reg        [15:0]   macs_0_0_mac_impl_adder;
+  reg        [31:0]   macs_0_0_mac_impl_mr;
+  reg        [31:0]   macs_0_0_mac_impl_adder;
   reg                 macs_0_0_mac_impl_sr_regNextWhen;
   wire                _zz_1_;
   reg        [15:0]   macs_0_1_mac_io_a;
   reg        [15:0]   macs_0_1_mac_io_b;
-  wire       [15:0]   macs_0_1_mac_io_res;
+  wire       [31:0]   macs_0_1_mac_io_res;
   reg                 macs_0_1_mac_io_clr;
   reg                 macs_0_1_mac_io_en;
-  reg        [15:0]   macs_0_1_mac_impl_or;
+  reg        [31:0]   macs_0_1_mac_impl_or;
   wire       [15:0]   macs_0_1_mac_impl_a;
   wire       [15:0]   macs_0_1_mac_impl_b;
-  wire       [15:0]   macs_0_1_mac_impl_c;
+  wire       [31:0]   macs_0_1_mac_impl_c;
   wire                macs_0_1_mac_impl_clr;
   wire                macs_0_1_mac_impl_en;
   reg        [15:0]   macs_0_1_mac_impl_ar;
   reg        [15:0]   macs_0_1_mac_impl_br;
   reg                 macs_0_1_mac_impl_sr;
-  reg        [15:0]   macs_0_1_mac_impl_mr;
-  reg        [15:0]   macs_0_1_mac_impl_adder;
+  reg        [31:0]   macs_0_1_mac_impl_mr;
+  reg        [31:0]   macs_0_1_mac_impl_adder;
   reg                 macs_0_1_mac_impl_sr_regNextWhen;
   wire                _zz_2_;
   reg        [15:0]   macs_0_2_mac_io_a;
   reg        [15:0]   macs_0_2_mac_io_b;
-  wire       [15:0]   macs_0_2_mac_io_res;
+  wire       [31:0]   macs_0_2_mac_io_res;
   reg                 macs_0_2_mac_io_clr;
   reg                 macs_0_2_mac_io_en;
-  reg        [15:0]   macs_0_2_mac_impl_or;
+  reg        [31:0]   macs_0_2_mac_impl_or;
   wire       [15:0]   macs_0_2_mac_impl_a;
   wire       [15:0]   macs_0_2_mac_impl_b;
-  wire       [15:0]   macs_0_2_mac_impl_c;
+  wire       [31:0]   macs_0_2_mac_impl_c;
   wire                macs_0_2_mac_impl_clr;
   wire                macs_0_2_mac_impl_en;
   reg        [15:0]   macs_0_2_mac_impl_ar;
   reg        [15:0]   macs_0_2_mac_impl_br;
   reg                 macs_0_2_mac_impl_sr;
-  reg        [15:0]   macs_0_2_mac_impl_mr;
-  reg        [15:0]   macs_0_2_mac_impl_adder;
+  reg        [31:0]   macs_0_2_mac_impl_mr;
+  reg        [31:0]   macs_0_2_mac_impl_adder;
   reg                 macs_0_2_mac_impl_sr_regNextWhen;
   wire                _zz_3_;
   reg        [15:0]   macs_0_3_mac_io_a;
   reg        [15:0]   macs_0_3_mac_io_b;
-  wire       [15:0]   macs_0_3_mac_io_res;
+  wire       [31:0]   macs_0_3_mac_io_res;
   reg                 macs_0_3_mac_io_clr;
   reg                 macs_0_3_mac_io_en;
-  reg        [15:0]   macs_0_3_mac_impl_or;
+  reg        [31:0]   macs_0_3_mac_impl_or;
   wire       [15:0]   macs_0_3_mac_impl_a;
   wire       [15:0]   macs_0_3_mac_impl_b;
-  wire       [15:0]   macs_0_3_mac_impl_c;
+  wire       [31:0]   macs_0_3_mac_impl_c;
   wire                macs_0_3_mac_impl_clr;
   wire                macs_0_3_mac_impl_en;
   reg        [15:0]   macs_0_3_mac_impl_ar;
   reg        [15:0]   macs_0_3_mac_impl_br;
   reg                 macs_0_3_mac_impl_sr;
-  reg        [15:0]   macs_0_3_mac_impl_mr;
-  reg        [15:0]   macs_0_3_mac_impl_adder;
+  reg        [31:0]   macs_0_3_mac_impl_mr;
+  reg        [31:0]   macs_0_3_mac_impl_adder;
   reg                 macs_0_3_mac_impl_sr_regNextWhen;
   wire                _zz_4_;
   reg        [15:0]   macs_0_4_mac_io_a;
   reg        [15:0]   macs_0_4_mac_io_b;
-  wire       [15:0]   macs_0_4_mac_io_res;
+  wire       [31:0]   macs_0_4_mac_io_res;
   reg                 macs_0_4_mac_io_clr;
   reg                 macs_0_4_mac_io_en;
-  reg        [15:0]   macs_0_4_mac_impl_or;
+  reg        [31:0]   macs_0_4_mac_impl_or;
   wire       [15:0]   macs_0_4_mac_impl_a;
   wire       [15:0]   macs_0_4_mac_impl_b;
-  wire       [15:0]   macs_0_4_mac_impl_c;
+  wire       [31:0]   macs_0_4_mac_impl_c;
   wire                macs_0_4_mac_impl_clr;
   wire                macs_0_4_mac_impl_en;
   reg        [15:0]   macs_0_4_mac_impl_ar;
   reg        [15:0]   macs_0_4_mac_impl_br;
   reg                 macs_0_4_mac_impl_sr;
-  reg        [15:0]   macs_0_4_mac_impl_mr;
-  reg        [15:0]   macs_0_4_mac_impl_adder;
+  reg        [31:0]   macs_0_4_mac_impl_mr;
+  reg        [31:0]   macs_0_4_mac_impl_adder;
   reg                 macs_0_4_mac_impl_sr_regNextWhen;
   wire                _zz_5_;
   reg        [15:0]   macs_1_0_mac_io_a;
   reg        [15:0]   macs_1_0_mac_io_b;
-  wire       [15:0]   macs_1_0_mac_io_res;
+  wire       [31:0]   macs_1_0_mac_io_res;
   reg                 macs_1_0_mac_io_clr;
   reg                 macs_1_0_mac_io_en;
-  reg        [15:0]   macs_1_0_mac_impl_or;
+  reg        [31:0]   macs_1_0_mac_impl_or;
   wire       [15:0]   macs_1_0_mac_impl_a;
   wire       [15:0]   macs_1_0_mac_impl_b;
-  wire       [15:0]   macs_1_0_mac_impl_c;
+  wire       [31:0]   macs_1_0_mac_impl_c;
   wire                macs_1_0_mac_impl_clr;
   wire                macs_1_0_mac_impl_en;
   reg        [15:0]   macs_1_0_mac_impl_ar;
   reg        [15:0]   macs_1_0_mac_impl_br;
   reg                 macs_1_0_mac_impl_sr;
-  reg        [15:0]   macs_1_0_mac_impl_mr;
-  reg        [15:0]   macs_1_0_mac_impl_adder;
+  reg        [31:0]   macs_1_0_mac_impl_mr;
+  reg        [31:0]   macs_1_0_mac_impl_adder;
   reg                 macs_1_0_mac_impl_sr_regNextWhen;
   wire                _zz_6_;
   reg        [15:0]   macs_1_1_mac_io_a;
   reg        [15:0]   macs_1_1_mac_io_b;
-  wire       [15:0]   macs_1_1_mac_io_res;
+  wire       [31:0]   macs_1_1_mac_io_res;
   reg                 macs_1_1_mac_io_clr;
   reg                 macs_1_1_mac_io_en;
-  reg        [15:0]   macs_1_1_mac_impl_or;
+  reg        [31:0]   macs_1_1_mac_impl_or;
   wire       [15:0]   macs_1_1_mac_impl_a;
   wire       [15:0]   macs_1_1_mac_impl_b;
-  wire       [15:0]   macs_1_1_mac_impl_c;
+  wire       [31:0]   macs_1_1_mac_impl_c;
   wire                macs_1_1_mac_impl_clr;
   wire                macs_1_1_mac_impl_en;
   reg        [15:0]   macs_1_1_mac_impl_ar;
   reg        [15:0]   macs_1_1_mac_impl_br;
   reg                 macs_1_1_mac_impl_sr;
-  reg        [15:0]   macs_1_1_mac_impl_mr;
-  reg        [15:0]   macs_1_1_mac_impl_adder;
+  reg        [31:0]   macs_1_1_mac_impl_mr;
+  reg        [31:0]   macs_1_1_mac_impl_adder;
   reg                 macs_1_1_mac_impl_sr_regNextWhen;
   wire                _zz_7_;
   reg        [15:0]   macs_1_2_mac_io_a;
   reg        [15:0]   macs_1_2_mac_io_b;
-  wire       [15:0]   macs_1_2_mac_io_res;
+  wire       [31:0]   macs_1_2_mac_io_res;
   reg                 macs_1_2_mac_io_clr;
   reg                 macs_1_2_mac_io_en;
-  reg        [15:0]   macs_1_2_mac_impl_or;
+  reg        [31:0]   macs_1_2_mac_impl_or;
   wire       [15:0]   macs_1_2_mac_impl_a;
   wire       [15:0]   macs_1_2_mac_impl_b;
-  wire       [15:0]   macs_1_2_mac_impl_c;
+  wire       [31:0]   macs_1_2_mac_impl_c;
   wire                macs_1_2_mac_impl_clr;
   wire                macs_1_2_mac_impl_en;
   reg        [15:0]   macs_1_2_mac_impl_ar;
   reg        [15:0]   macs_1_2_mac_impl_br;
   reg                 macs_1_2_mac_impl_sr;
-  reg        [15:0]   macs_1_2_mac_impl_mr;
-  reg        [15:0]   macs_1_2_mac_impl_adder;
+  reg        [31:0]   macs_1_2_mac_impl_mr;
+  reg        [31:0]   macs_1_2_mac_impl_adder;
   reg                 macs_1_2_mac_impl_sr_regNextWhen;
   wire                _zz_8_;
   reg        [15:0]   macs_1_3_mac_io_a;
   reg        [15:0]   macs_1_3_mac_io_b;
-  wire       [15:0]   macs_1_3_mac_io_res;
+  wire       [31:0]   macs_1_3_mac_io_res;
   reg                 macs_1_3_mac_io_clr;
   reg                 macs_1_3_mac_io_en;
-  reg        [15:0]   macs_1_3_mac_impl_or;
+  reg        [31:0]   macs_1_3_mac_impl_or;
   wire       [15:0]   macs_1_3_mac_impl_a;
   wire       [15:0]   macs_1_3_mac_impl_b;
-  wire       [15:0]   macs_1_3_mac_impl_c;
+  wire       [31:0]   macs_1_3_mac_impl_c;
   wire                macs_1_3_mac_impl_clr;
   wire                macs_1_3_mac_impl_en;
   reg        [15:0]   macs_1_3_mac_impl_ar;
   reg        [15:0]   macs_1_3_mac_impl_br;
   reg                 macs_1_3_mac_impl_sr;
-  reg        [15:0]   macs_1_3_mac_impl_mr;
-  reg        [15:0]   macs_1_3_mac_impl_adder;
+  reg        [31:0]   macs_1_3_mac_impl_mr;
+  reg        [31:0]   macs_1_3_mac_impl_adder;
   reg                 macs_1_3_mac_impl_sr_regNextWhen;
   wire                _zz_9_;
   reg        [15:0]   macs_1_4_mac_io_a;
   reg        [15:0]   macs_1_4_mac_io_b;
-  wire       [15:0]   macs_1_4_mac_io_res;
+  wire       [31:0]   macs_1_4_mac_io_res;
   reg                 macs_1_4_mac_io_clr;
   reg                 macs_1_4_mac_io_en;
-  reg        [15:0]   macs_1_4_mac_impl_or;
+  reg        [31:0]   macs_1_4_mac_impl_or;
   wire       [15:0]   macs_1_4_mac_impl_a;
   wire       [15:0]   macs_1_4_mac_impl_b;
-  wire       [15:0]   macs_1_4_mac_impl_c;
+  wire       [31:0]   macs_1_4_mac_impl_c;
   wire                macs_1_4_mac_impl_clr;
   wire                macs_1_4_mac_impl_en;
   reg        [15:0]   macs_1_4_mac_impl_ar;
   reg        [15:0]   macs_1_4_mac_impl_br;
   reg                 macs_1_4_mac_impl_sr;
-  reg        [15:0]   macs_1_4_mac_impl_mr;
-  reg        [15:0]   macs_1_4_mac_impl_adder;
+  reg        [31:0]   macs_1_4_mac_impl_mr;
+  reg        [31:0]   macs_1_4_mac_impl_adder;
   reg                 macs_1_4_mac_impl_sr_regNextWhen;
   wire                _zz_10_;
   reg        [15:0]   macs_2_0_mac_io_a;
   reg        [15:0]   macs_2_0_mac_io_b;
-  wire       [15:0]   macs_2_0_mac_io_res;
+  wire       [31:0]   macs_2_0_mac_io_res;
   reg                 macs_2_0_mac_io_clr;
   reg                 macs_2_0_mac_io_en;
-  reg        [15:0]   macs_2_0_mac_impl_or;
+  reg        [31:0]   macs_2_0_mac_impl_or;
   wire       [15:0]   macs_2_0_mac_impl_a;
   wire       [15:0]   macs_2_0_mac_impl_b;
-  wire       [15:0]   macs_2_0_mac_impl_c;
+  wire       [31:0]   macs_2_0_mac_impl_c;
   wire                macs_2_0_mac_impl_clr;
   wire                macs_2_0_mac_impl_en;
   reg        [15:0]   macs_2_0_mac_impl_ar;
   reg        [15:0]   macs_2_0_mac_impl_br;
   reg                 macs_2_0_mac_impl_sr;
-  reg        [15:0]   macs_2_0_mac_impl_mr;
-  reg        [15:0]   macs_2_0_mac_impl_adder;
+  reg        [31:0]   macs_2_0_mac_impl_mr;
+  reg        [31:0]   macs_2_0_mac_impl_adder;
   reg                 macs_2_0_mac_impl_sr_regNextWhen;
   wire                _zz_11_;
   reg        [15:0]   macs_2_1_mac_io_a;
   reg        [15:0]   macs_2_1_mac_io_b;
-  wire       [15:0]   macs_2_1_mac_io_res;
+  wire       [31:0]   macs_2_1_mac_io_res;
   reg                 macs_2_1_mac_io_clr;
   reg                 macs_2_1_mac_io_en;
-  reg        [15:0]   macs_2_1_mac_impl_or;
+  reg        [31:0]   macs_2_1_mac_impl_or;
   wire       [15:0]   macs_2_1_mac_impl_a;
   wire       [15:0]   macs_2_1_mac_impl_b;
-  wire       [15:0]   macs_2_1_mac_impl_c;
+  wire       [31:0]   macs_2_1_mac_impl_c;
   wire                macs_2_1_mac_impl_clr;
   wire                macs_2_1_mac_impl_en;
   reg        [15:0]   macs_2_1_mac_impl_ar;
   reg        [15:0]   macs_2_1_mac_impl_br;
   reg                 macs_2_1_mac_impl_sr;
-  reg        [15:0]   macs_2_1_mac_impl_mr;
-  reg        [15:0]   macs_2_1_mac_impl_adder;
+  reg        [31:0]   macs_2_1_mac_impl_mr;
+  reg        [31:0]   macs_2_1_mac_impl_adder;
   reg                 macs_2_1_mac_impl_sr_regNextWhen;
   wire                _zz_12_;
   reg        [15:0]   macs_2_2_mac_io_a;
   reg        [15:0]   macs_2_2_mac_io_b;
-  wire       [15:0]   macs_2_2_mac_io_res;
+  wire       [31:0]   macs_2_2_mac_io_res;
   reg                 macs_2_2_mac_io_clr;
   reg                 macs_2_2_mac_io_en;
-  reg        [15:0]   macs_2_2_mac_impl_or;
+  reg        [31:0]   macs_2_2_mac_impl_or;
   wire       [15:0]   macs_2_2_mac_impl_a;
   wire       [15:0]   macs_2_2_mac_impl_b;
-  wire       [15:0]   macs_2_2_mac_impl_c;
+  wire       [31:0]   macs_2_2_mac_impl_c;
   wire                macs_2_2_mac_impl_clr;
   wire                macs_2_2_mac_impl_en;
   reg        [15:0]   macs_2_2_mac_impl_ar;
   reg        [15:0]   macs_2_2_mac_impl_br;
   reg                 macs_2_2_mac_impl_sr;
-  reg        [15:0]   macs_2_2_mac_impl_mr;
-  reg        [15:0]   macs_2_2_mac_impl_adder;
+  reg        [31:0]   macs_2_2_mac_impl_mr;
+  reg        [31:0]   macs_2_2_mac_impl_adder;
   reg                 macs_2_2_mac_impl_sr_regNextWhen;
   wire                _zz_13_;
   reg        [15:0]   macs_2_3_mac_io_a;
   reg        [15:0]   macs_2_3_mac_io_b;
-  wire       [15:0]   macs_2_3_mac_io_res;
+  wire       [31:0]   macs_2_3_mac_io_res;
   reg                 macs_2_3_mac_io_clr;
   reg                 macs_2_3_mac_io_en;
-  reg        [15:0]   macs_2_3_mac_impl_or;
+  reg        [31:0]   macs_2_3_mac_impl_or;
   wire       [15:0]   macs_2_3_mac_impl_a;
   wire       [15:0]   macs_2_3_mac_impl_b;
-  wire       [15:0]   macs_2_3_mac_impl_c;
+  wire       [31:0]   macs_2_3_mac_impl_c;
   wire                macs_2_3_mac_impl_clr;
   wire                macs_2_3_mac_impl_en;
   reg        [15:0]   macs_2_3_mac_impl_ar;
   reg        [15:0]   macs_2_3_mac_impl_br;
   reg                 macs_2_3_mac_impl_sr;
-  reg        [15:0]   macs_2_3_mac_impl_mr;
-  reg        [15:0]   macs_2_3_mac_impl_adder;
+  reg        [31:0]   macs_2_3_mac_impl_mr;
+  reg        [31:0]   macs_2_3_mac_impl_adder;
   reg                 macs_2_3_mac_impl_sr_regNextWhen;
   wire                _zz_14_;
   reg        [15:0]   macs_2_4_mac_io_a;
   reg        [15:0]   macs_2_4_mac_io_b;
-  wire       [15:0]   macs_2_4_mac_io_res;
+  wire       [31:0]   macs_2_4_mac_io_res;
   reg                 macs_2_4_mac_io_clr;
   reg                 macs_2_4_mac_io_en;
-  reg        [15:0]   macs_2_4_mac_impl_or;
+  reg        [31:0]   macs_2_4_mac_impl_or;
   wire       [15:0]   macs_2_4_mac_impl_a;
   wire       [15:0]   macs_2_4_mac_impl_b;
-  wire       [15:0]   macs_2_4_mac_impl_c;
+  wire       [31:0]   macs_2_4_mac_impl_c;
   wire                macs_2_4_mac_impl_clr;
   wire                macs_2_4_mac_impl_en;
   reg        [15:0]   macs_2_4_mac_impl_ar;
   reg        [15:0]   macs_2_4_mac_impl_br;
   reg                 macs_2_4_mac_impl_sr;
-  reg        [15:0]   macs_2_4_mac_impl_mr;
-  reg        [15:0]   macs_2_4_mac_impl_adder;
+  reg        [31:0]   macs_2_4_mac_impl_mr;
+  reg        [31:0]   macs_2_4_mac_impl_adder;
   reg                 macs_2_4_mac_impl_sr_regNextWhen;
   wire                _zz_15_;
   reg        [15:0]   macs_3_0_mac_io_a;
   reg        [15:0]   macs_3_0_mac_io_b;
-  wire       [15:0]   macs_3_0_mac_io_res;
+  wire       [31:0]   macs_3_0_mac_io_res;
   reg                 macs_3_0_mac_io_clr;
   reg                 macs_3_0_mac_io_en;
-  reg        [15:0]   macs_3_0_mac_impl_or;
+  reg        [31:0]   macs_3_0_mac_impl_or;
   wire       [15:0]   macs_3_0_mac_impl_a;
   wire       [15:0]   macs_3_0_mac_impl_b;
-  wire       [15:0]   macs_3_0_mac_impl_c;
+  wire       [31:0]   macs_3_0_mac_impl_c;
   wire                macs_3_0_mac_impl_clr;
   wire                macs_3_0_mac_impl_en;
   reg        [15:0]   macs_3_0_mac_impl_ar;
   reg        [15:0]   macs_3_0_mac_impl_br;
   reg                 macs_3_0_mac_impl_sr;
-  reg        [15:0]   macs_3_0_mac_impl_mr;
-  reg        [15:0]   macs_3_0_mac_impl_adder;
+  reg        [31:0]   macs_3_0_mac_impl_mr;
+  reg        [31:0]   macs_3_0_mac_impl_adder;
   reg                 macs_3_0_mac_impl_sr_regNextWhen;
   wire                _zz_16_;
   reg        [15:0]   macs_3_1_mac_io_a;
   reg        [15:0]   macs_3_1_mac_io_b;
-  wire       [15:0]   macs_3_1_mac_io_res;
+  wire       [31:0]   macs_3_1_mac_io_res;
   reg                 macs_3_1_mac_io_clr;
   reg                 macs_3_1_mac_io_en;
-  reg        [15:0]   macs_3_1_mac_impl_or;
+  reg        [31:0]   macs_3_1_mac_impl_or;
   wire       [15:0]   macs_3_1_mac_impl_a;
   wire       [15:0]   macs_3_1_mac_impl_b;
-  wire       [15:0]   macs_3_1_mac_impl_c;
+  wire       [31:0]   macs_3_1_mac_impl_c;
   wire                macs_3_1_mac_impl_clr;
   wire                macs_3_1_mac_impl_en;
   reg        [15:0]   macs_3_1_mac_impl_ar;
   reg        [15:0]   macs_3_1_mac_impl_br;
   reg                 macs_3_1_mac_impl_sr;
-  reg        [15:0]   macs_3_1_mac_impl_mr;
-  reg        [15:0]   macs_3_1_mac_impl_adder;
+  reg        [31:0]   macs_3_1_mac_impl_mr;
+  reg        [31:0]   macs_3_1_mac_impl_adder;
   reg                 macs_3_1_mac_impl_sr_regNextWhen;
   wire                _zz_17_;
   reg        [15:0]   macs_3_2_mac_io_a;
   reg        [15:0]   macs_3_2_mac_io_b;
-  wire       [15:0]   macs_3_2_mac_io_res;
+  wire       [31:0]   macs_3_2_mac_io_res;
   reg                 macs_3_2_mac_io_clr;
   reg                 macs_3_2_mac_io_en;
-  reg        [15:0]   macs_3_2_mac_impl_or;
+  reg        [31:0]   macs_3_2_mac_impl_or;
   wire       [15:0]   macs_3_2_mac_impl_a;
   wire       [15:0]   macs_3_2_mac_impl_b;
-  wire       [15:0]   macs_3_2_mac_impl_c;
+  wire       [31:0]   macs_3_2_mac_impl_c;
   wire                macs_3_2_mac_impl_clr;
   wire                macs_3_2_mac_impl_en;
   reg        [15:0]   macs_3_2_mac_impl_ar;
   reg        [15:0]   macs_3_2_mac_impl_br;
   reg                 macs_3_2_mac_impl_sr;
-  reg        [15:0]   macs_3_2_mac_impl_mr;
-  reg        [15:0]   macs_3_2_mac_impl_adder;
+  reg        [31:0]   macs_3_2_mac_impl_mr;
+  reg        [31:0]   macs_3_2_mac_impl_adder;
   reg                 macs_3_2_mac_impl_sr_regNextWhen;
   wire                _zz_18_;
   reg        [15:0]   macs_3_3_mac_io_a;
   reg        [15:0]   macs_3_3_mac_io_b;
-  wire       [15:0]   macs_3_3_mac_io_res;
+  wire       [31:0]   macs_3_3_mac_io_res;
   reg                 macs_3_3_mac_io_clr;
   reg                 macs_3_3_mac_io_en;
-  reg        [15:0]   macs_3_3_mac_impl_or;
+  reg        [31:0]   macs_3_3_mac_impl_or;
   wire       [15:0]   macs_3_3_mac_impl_a;
   wire       [15:0]   macs_3_3_mac_impl_b;
-  wire       [15:0]   macs_3_3_mac_impl_c;
+  wire       [31:0]   macs_3_3_mac_impl_c;
   wire                macs_3_3_mac_impl_clr;
   wire                macs_3_3_mac_impl_en;
   reg        [15:0]   macs_3_3_mac_impl_ar;
   reg        [15:0]   macs_3_3_mac_impl_br;
   reg                 macs_3_3_mac_impl_sr;
-  reg        [15:0]   macs_3_3_mac_impl_mr;
-  reg        [15:0]   macs_3_3_mac_impl_adder;
+  reg        [31:0]   macs_3_3_mac_impl_mr;
+  reg        [31:0]   macs_3_3_mac_impl_adder;
   reg                 macs_3_3_mac_impl_sr_regNextWhen;
   wire                _zz_19_;
   reg        [15:0]   macs_3_4_mac_io_a;
   reg        [15:0]   macs_3_4_mac_io_b;
-  wire       [15:0]   macs_3_4_mac_io_res;
+  wire       [31:0]   macs_3_4_mac_io_res;
   reg                 macs_3_4_mac_io_clr;
   reg                 macs_3_4_mac_io_en;
-  reg        [15:0]   macs_3_4_mac_impl_or;
+  reg        [31:0]   macs_3_4_mac_impl_or;
   wire       [15:0]   macs_3_4_mac_impl_a;
   wire       [15:0]   macs_3_4_mac_impl_b;
-  wire       [15:0]   macs_3_4_mac_impl_c;
+  wire       [31:0]   macs_3_4_mac_impl_c;
   wire                macs_3_4_mac_impl_clr;
   wire                macs_3_4_mac_impl_en;
   reg        [15:0]   macs_3_4_mac_impl_ar;
   reg        [15:0]   macs_3_4_mac_impl_br;
   reg                 macs_3_4_mac_impl_sr;
-  reg        [15:0]   macs_3_4_mac_impl_mr;
-  reg        [15:0]   macs_3_4_mac_impl_adder;
+  reg        [31:0]   macs_3_4_mac_impl_mr;
+  reg        [31:0]   macs_3_4_mac_impl_adder;
   reg                 macs_3_4_mac_impl_sr_regNextWhen;
   wire                _zz_20_;
   reg        [15:0]   macs_4_0_mac_io_a;
   reg        [15:0]   macs_4_0_mac_io_b;
-  wire       [15:0]   macs_4_0_mac_io_res;
+  wire       [31:0]   macs_4_0_mac_io_res;
   reg                 macs_4_0_mac_io_clr;
   reg                 macs_4_0_mac_io_en;
-  reg        [15:0]   macs_4_0_mac_impl_or;
+  reg        [31:0]   macs_4_0_mac_impl_or;
   wire       [15:0]   macs_4_0_mac_impl_a;
   wire       [15:0]   macs_4_0_mac_impl_b;
-  wire       [15:0]   macs_4_0_mac_impl_c;
+  wire       [31:0]   macs_4_0_mac_impl_c;
   wire                macs_4_0_mac_impl_clr;
   wire                macs_4_0_mac_impl_en;
   reg        [15:0]   macs_4_0_mac_impl_ar;
   reg        [15:0]   macs_4_0_mac_impl_br;
   reg                 macs_4_0_mac_impl_sr;
-  reg        [15:0]   macs_4_0_mac_impl_mr;
-  reg        [15:0]   macs_4_0_mac_impl_adder;
+  reg        [31:0]   macs_4_0_mac_impl_mr;
+  reg        [31:0]   macs_4_0_mac_impl_adder;
   reg                 macs_4_0_mac_impl_sr_regNextWhen;
   wire                _zz_21_;
   reg        [15:0]   macs_4_1_mac_io_a;
   reg        [15:0]   macs_4_1_mac_io_b;
-  wire       [15:0]   macs_4_1_mac_io_res;
+  wire       [31:0]   macs_4_1_mac_io_res;
   reg                 macs_4_1_mac_io_clr;
   reg                 macs_4_1_mac_io_en;
-  reg        [15:0]   macs_4_1_mac_impl_or;
+  reg        [31:0]   macs_4_1_mac_impl_or;
   wire       [15:0]   macs_4_1_mac_impl_a;
   wire       [15:0]   macs_4_1_mac_impl_b;
-  wire       [15:0]   macs_4_1_mac_impl_c;
+  wire       [31:0]   macs_4_1_mac_impl_c;
   wire                macs_4_1_mac_impl_clr;
   wire                macs_4_1_mac_impl_en;
   reg        [15:0]   macs_4_1_mac_impl_ar;
   reg        [15:0]   macs_4_1_mac_impl_br;
   reg                 macs_4_1_mac_impl_sr;
-  reg        [15:0]   macs_4_1_mac_impl_mr;
-  reg        [15:0]   macs_4_1_mac_impl_adder;
+  reg        [31:0]   macs_4_1_mac_impl_mr;
+  reg        [31:0]   macs_4_1_mac_impl_adder;
   reg                 macs_4_1_mac_impl_sr_regNextWhen;
   wire                _zz_22_;
   reg        [15:0]   macs_4_2_mac_io_a;
   reg        [15:0]   macs_4_2_mac_io_b;
-  wire       [15:0]   macs_4_2_mac_io_res;
+  wire       [31:0]   macs_4_2_mac_io_res;
   reg                 macs_4_2_mac_io_clr;
   reg                 macs_4_2_mac_io_en;
-  reg        [15:0]   macs_4_2_mac_impl_or;
+  reg        [31:0]   macs_4_2_mac_impl_or;
   wire       [15:0]   macs_4_2_mac_impl_a;
   wire       [15:0]   macs_4_2_mac_impl_b;
-  wire       [15:0]   macs_4_2_mac_impl_c;
+  wire       [31:0]   macs_4_2_mac_impl_c;
   wire                macs_4_2_mac_impl_clr;
   wire                macs_4_2_mac_impl_en;
   reg        [15:0]   macs_4_2_mac_impl_ar;
   reg        [15:0]   macs_4_2_mac_impl_br;
   reg                 macs_4_2_mac_impl_sr;
-  reg        [15:0]   macs_4_2_mac_impl_mr;
-  reg        [15:0]   macs_4_2_mac_impl_adder;
+  reg        [31:0]   macs_4_2_mac_impl_mr;
+  reg        [31:0]   macs_4_2_mac_impl_adder;
   reg                 macs_4_2_mac_impl_sr_regNextWhen;
   wire                _zz_23_;
   reg        [15:0]   macs_4_3_mac_io_a;
   reg        [15:0]   macs_4_3_mac_io_b;
-  wire       [15:0]   macs_4_3_mac_io_res;
+  wire       [31:0]   macs_4_3_mac_io_res;
   reg                 macs_4_3_mac_io_clr;
   reg                 macs_4_3_mac_io_en;
-  reg        [15:0]   macs_4_3_mac_impl_or;
+  reg        [31:0]   macs_4_3_mac_impl_or;
   wire       [15:0]   macs_4_3_mac_impl_a;
   wire       [15:0]   macs_4_3_mac_impl_b;
-  wire       [15:0]   macs_4_3_mac_impl_c;
+  wire       [31:0]   macs_4_3_mac_impl_c;
   wire                macs_4_3_mac_impl_clr;
   wire                macs_4_3_mac_impl_en;
   reg        [15:0]   macs_4_3_mac_impl_ar;
   reg        [15:0]   macs_4_3_mac_impl_br;
   reg                 macs_4_3_mac_impl_sr;
-  reg        [15:0]   macs_4_3_mac_impl_mr;
-  reg        [15:0]   macs_4_3_mac_impl_adder;
+  reg        [31:0]   macs_4_3_mac_impl_mr;
+  reg        [31:0]   macs_4_3_mac_impl_adder;
   reg                 macs_4_3_mac_impl_sr_regNextWhen;
   wire                _zz_24_;
   reg        [15:0]   macs_4_4_mac_io_a;
   reg        [15:0]   macs_4_4_mac_io_b;
-  wire       [15:0]   macs_4_4_mac_io_res;
+  wire       [31:0]   macs_4_4_mac_io_res;
   reg                 macs_4_4_mac_io_clr;
   reg                 macs_4_4_mac_io_en;
-  reg        [15:0]   macs_4_4_mac_impl_or;
+  reg        [31:0]   macs_4_4_mac_impl_or;
   wire       [15:0]   macs_4_4_mac_impl_a;
   wire       [15:0]   macs_4_4_mac_impl_b;
-  wire       [15:0]   macs_4_4_mac_impl_c;
+  wire       [31:0]   macs_4_4_mac_impl_c;
   wire                macs_4_4_mac_impl_clr;
   wire                macs_4_4_mac_impl_en;
   reg        [15:0]   macs_4_4_mac_impl_ar;
   reg        [15:0]   macs_4_4_mac_impl_br;
   reg                 macs_4_4_mac_impl_sr;
-  reg        [15:0]   macs_4_4_mac_impl_mr;
-  reg        [15:0]   macs_4_4_mac_impl_adder;
+  reg        [31:0]   macs_4_4_mac_impl_mr;
+  reg        [31:0]   macs_4_4_mac_impl_adder;
   reg                 macs_4_4_mac_impl_sr_regNextWhen;
   wire                _zz_25_;
 
@@ -1681,7 +1681,7 @@ module Pe (
   assign io_last = last;
   always @ (*) begin
     if(macs_0_0_mac_impl_sr_regNextWhen)begin
-      macs_0_0_mac_impl_or = 16'h0;
+      macs_0_0_mac_impl_or = 32'h0;
     end else begin
       macs_0_0_mac_impl_or = macs_0_0_mac_impl_adder;
     end
@@ -1739,7 +1739,7 @@ module Pe (
   assign io_results_0_0 = macs_0_0_mac_io_res;
   always @ (*) begin
     if(macs_0_1_mac_impl_sr_regNextWhen)begin
-      macs_0_1_mac_impl_or = 16'h0;
+      macs_0_1_mac_impl_or = 32'h0;
     end else begin
       macs_0_1_mac_impl_or = macs_0_1_mac_impl_adder;
     end
@@ -1797,7 +1797,7 @@ module Pe (
   assign io_results_0_1 = macs_0_1_mac_io_res;
   always @ (*) begin
     if(macs_0_2_mac_impl_sr_regNextWhen)begin
-      macs_0_2_mac_impl_or = 16'h0;
+      macs_0_2_mac_impl_or = 32'h0;
     end else begin
       macs_0_2_mac_impl_or = macs_0_2_mac_impl_adder;
     end
@@ -1855,7 +1855,7 @@ module Pe (
   assign io_results_0_2 = macs_0_2_mac_io_res;
   always @ (*) begin
     if(macs_0_3_mac_impl_sr_regNextWhen)begin
-      macs_0_3_mac_impl_or = 16'h0;
+      macs_0_3_mac_impl_or = 32'h0;
     end else begin
       macs_0_3_mac_impl_or = macs_0_3_mac_impl_adder;
     end
@@ -1913,7 +1913,7 @@ module Pe (
   assign io_results_0_3 = macs_0_3_mac_io_res;
   always @ (*) begin
     if(macs_0_4_mac_impl_sr_regNextWhen)begin
-      macs_0_4_mac_impl_or = 16'h0;
+      macs_0_4_mac_impl_or = 32'h0;
     end else begin
       macs_0_4_mac_impl_or = macs_0_4_mac_impl_adder;
     end
@@ -1971,7 +1971,7 @@ module Pe (
   assign io_results_0_4 = macs_0_4_mac_io_res;
   always @ (*) begin
     if(macs_1_0_mac_impl_sr_regNextWhen)begin
-      macs_1_0_mac_impl_or = 16'h0;
+      macs_1_0_mac_impl_or = 32'h0;
     end else begin
       macs_1_0_mac_impl_or = macs_1_0_mac_impl_adder;
     end
@@ -2029,7 +2029,7 @@ module Pe (
   assign io_results_1_0 = macs_1_0_mac_io_res;
   always @ (*) begin
     if(macs_1_1_mac_impl_sr_regNextWhen)begin
-      macs_1_1_mac_impl_or = 16'h0;
+      macs_1_1_mac_impl_or = 32'h0;
     end else begin
       macs_1_1_mac_impl_or = macs_1_1_mac_impl_adder;
     end
@@ -2087,7 +2087,7 @@ module Pe (
   assign io_results_1_1 = macs_1_1_mac_io_res;
   always @ (*) begin
     if(macs_1_2_mac_impl_sr_regNextWhen)begin
-      macs_1_2_mac_impl_or = 16'h0;
+      macs_1_2_mac_impl_or = 32'h0;
     end else begin
       macs_1_2_mac_impl_or = macs_1_2_mac_impl_adder;
     end
@@ -2145,7 +2145,7 @@ module Pe (
   assign io_results_1_2 = macs_1_2_mac_io_res;
   always @ (*) begin
     if(macs_1_3_mac_impl_sr_regNextWhen)begin
-      macs_1_3_mac_impl_or = 16'h0;
+      macs_1_3_mac_impl_or = 32'h0;
     end else begin
       macs_1_3_mac_impl_or = macs_1_3_mac_impl_adder;
     end
@@ -2203,7 +2203,7 @@ module Pe (
   assign io_results_1_3 = macs_1_3_mac_io_res;
   always @ (*) begin
     if(macs_1_4_mac_impl_sr_regNextWhen)begin
-      macs_1_4_mac_impl_or = 16'h0;
+      macs_1_4_mac_impl_or = 32'h0;
     end else begin
       macs_1_4_mac_impl_or = macs_1_4_mac_impl_adder;
     end
@@ -2261,7 +2261,7 @@ module Pe (
   assign io_results_1_4 = macs_1_4_mac_io_res;
   always @ (*) begin
     if(macs_2_0_mac_impl_sr_regNextWhen)begin
-      macs_2_0_mac_impl_or = 16'h0;
+      macs_2_0_mac_impl_or = 32'h0;
     end else begin
       macs_2_0_mac_impl_or = macs_2_0_mac_impl_adder;
     end
@@ -2319,7 +2319,7 @@ module Pe (
   assign io_results_2_0 = macs_2_0_mac_io_res;
   always @ (*) begin
     if(macs_2_1_mac_impl_sr_regNextWhen)begin
-      macs_2_1_mac_impl_or = 16'h0;
+      macs_2_1_mac_impl_or = 32'h0;
     end else begin
       macs_2_1_mac_impl_or = macs_2_1_mac_impl_adder;
     end
@@ -2377,7 +2377,7 @@ module Pe (
   assign io_results_2_1 = macs_2_1_mac_io_res;
   always @ (*) begin
     if(macs_2_2_mac_impl_sr_regNextWhen)begin
-      macs_2_2_mac_impl_or = 16'h0;
+      macs_2_2_mac_impl_or = 32'h0;
     end else begin
       macs_2_2_mac_impl_or = macs_2_2_mac_impl_adder;
     end
@@ -2435,7 +2435,7 @@ module Pe (
   assign io_results_2_2 = macs_2_2_mac_io_res;
   always @ (*) begin
     if(macs_2_3_mac_impl_sr_regNextWhen)begin
-      macs_2_3_mac_impl_or = 16'h0;
+      macs_2_3_mac_impl_or = 32'h0;
     end else begin
       macs_2_3_mac_impl_or = macs_2_3_mac_impl_adder;
     end
@@ -2493,7 +2493,7 @@ module Pe (
   assign io_results_2_3 = macs_2_3_mac_io_res;
   always @ (*) begin
     if(macs_2_4_mac_impl_sr_regNextWhen)begin
-      macs_2_4_mac_impl_or = 16'h0;
+      macs_2_4_mac_impl_or = 32'h0;
     end else begin
       macs_2_4_mac_impl_or = macs_2_4_mac_impl_adder;
     end
@@ -2551,7 +2551,7 @@ module Pe (
   assign io_results_2_4 = macs_2_4_mac_io_res;
   always @ (*) begin
     if(macs_3_0_mac_impl_sr_regNextWhen)begin
-      macs_3_0_mac_impl_or = 16'h0;
+      macs_3_0_mac_impl_or = 32'h0;
     end else begin
       macs_3_0_mac_impl_or = macs_3_0_mac_impl_adder;
     end
@@ -2609,7 +2609,7 @@ module Pe (
   assign io_results_3_0 = macs_3_0_mac_io_res;
   always @ (*) begin
     if(macs_3_1_mac_impl_sr_regNextWhen)begin
-      macs_3_1_mac_impl_or = 16'h0;
+      macs_3_1_mac_impl_or = 32'h0;
     end else begin
       macs_3_1_mac_impl_or = macs_3_1_mac_impl_adder;
     end
@@ -2667,7 +2667,7 @@ module Pe (
   assign io_results_3_1 = macs_3_1_mac_io_res;
   always @ (*) begin
     if(macs_3_2_mac_impl_sr_regNextWhen)begin
-      macs_3_2_mac_impl_or = 16'h0;
+      macs_3_2_mac_impl_or = 32'h0;
     end else begin
       macs_3_2_mac_impl_or = macs_3_2_mac_impl_adder;
     end
@@ -2725,7 +2725,7 @@ module Pe (
   assign io_results_3_2 = macs_3_2_mac_io_res;
   always @ (*) begin
     if(macs_3_3_mac_impl_sr_regNextWhen)begin
-      macs_3_3_mac_impl_or = 16'h0;
+      macs_3_3_mac_impl_or = 32'h0;
     end else begin
       macs_3_3_mac_impl_or = macs_3_3_mac_impl_adder;
     end
@@ -2783,7 +2783,7 @@ module Pe (
   assign io_results_3_3 = macs_3_3_mac_io_res;
   always @ (*) begin
     if(macs_3_4_mac_impl_sr_regNextWhen)begin
-      macs_3_4_mac_impl_or = 16'h0;
+      macs_3_4_mac_impl_or = 32'h0;
     end else begin
       macs_3_4_mac_impl_or = macs_3_4_mac_impl_adder;
     end
@@ -2841,7 +2841,7 @@ module Pe (
   assign io_results_3_4 = macs_3_4_mac_io_res;
   always @ (*) begin
     if(macs_4_0_mac_impl_sr_regNextWhen)begin
-      macs_4_0_mac_impl_or = 16'h0;
+      macs_4_0_mac_impl_or = 32'h0;
     end else begin
       macs_4_0_mac_impl_or = macs_4_0_mac_impl_adder;
     end
@@ -2899,7 +2899,7 @@ module Pe (
   assign io_results_4_0 = macs_4_0_mac_io_res;
   always @ (*) begin
     if(macs_4_1_mac_impl_sr_regNextWhen)begin
-      macs_4_1_mac_impl_or = 16'h0;
+      macs_4_1_mac_impl_or = 32'h0;
     end else begin
       macs_4_1_mac_impl_or = macs_4_1_mac_impl_adder;
     end
@@ -2957,7 +2957,7 @@ module Pe (
   assign io_results_4_1 = macs_4_1_mac_io_res;
   always @ (*) begin
     if(macs_4_2_mac_impl_sr_regNextWhen)begin
-      macs_4_2_mac_impl_or = 16'h0;
+      macs_4_2_mac_impl_or = 32'h0;
     end else begin
       macs_4_2_mac_impl_or = macs_4_2_mac_impl_adder;
     end
@@ -3015,7 +3015,7 @@ module Pe (
   assign io_results_4_2 = macs_4_2_mac_io_res;
   always @ (*) begin
     if(macs_4_3_mac_impl_sr_regNextWhen)begin
-      macs_4_3_mac_impl_or = 16'h0;
+      macs_4_3_mac_impl_or = 32'h0;
     end else begin
       macs_4_3_mac_impl_or = macs_4_3_mac_impl_adder;
     end
@@ -3073,7 +3073,7 @@ module Pe (
   assign io_results_4_3 = macs_4_3_mac_io_res;
   always @ (*) begin
     if(macs_4_4_mac_impl_sr_regNextWhen)begin
-      macs_4_4_mac_impl_or = 16'h0;
+      macs_4_4_mac_impl_or = 32'h0;
     end else begin
       macs_4_4_mac_impl_or = macs_4_4_mac_impl_adder;
     end
@@ -3139,104 +3139,104 @@ module Pe (
       counters_lastB <= 1'b0;
       macs_0_0_mac_impl_ar <= 16'h0;
       macs_0_0_mac_impl_br <= 16'h0;
-      macs_0_0_mac_impl_mr <= 16'h0;
-      macs_0_0_mac_impl_adder <= 16'h0;
+      macs_0_0_mac_impl_mr <= 32'h0;
+      macs_0_0_mac_impl_adder <= 32'h0;
       macs_0_1_mac_impl_ar <= 16'h0;
       macs_0_1_mac_impl_br <= 16'h0;
-      macs_0_1_mac_impl_mr <= 16'h0;
-      macs_0_1_mac_impl_adder <= 16'h0;
+      macs_0_1_mac_impl_mr <= 32'h0;
+      macs_0_1_mac_impl_adder <= 32'h0;
       macs_0_2_mac_impl_ar <= 16'h0;
       macs_0_2_mac_impl_br <= 16'h0;
-      macs_0_2_mac_impl_mr <= 16'h0;
-      macs_0_2_mac_impl_adder <= 16'h0;
+      macs_0_2_mac_impl_mr <= 32'h0;
+      macs_0_2_mac_impl_adder <= 32'h0;
       macs_0_3_mac_impl_ar <= 16'h0;
       macs_0_3_mac_impl_br <= 16'h0;
-      macs_0_3_mac_impl_mr <= 16'h0;
-      macs_0_3_mac_impl_adder <= 16'h0;
+      macs_0_3_mac_impl_mr <= 32'h0;
+      macs_0_3_mac_impl_adder <= 32'h0;
       macs_0_4_mac_impl_ar <= 16'h0;
       macs_0_4_mac_impl_br <= 16'h0;
-      macs_0_4_mac_impl_mr <= 16'h0;
-      macs_0_4_mac_impl_adder <= 16'h0;
+      macs_0_4_mac_impl_mr <= 32'h0;
+      macs_0_4_mac_impl_adder <= 32'h0;
       macs_1_0_mac_impl_ar <= 16'h0;
       macs_1_0_mac_impl_br <= 16'h0;
-      macs_1_0_mac_impl_mr <= 16'h0;
-      macs_1_0_mac_impl_adder <= 16'h0;
+      macs_1_0_mac_impl_mr <= 32'h0;
+      macs_1_0_mac_impl_adder <= 32'h0;
       macs_1_1_mac_impl_ar <= 16'h0;
       macs_1_1_mac_impl_br <= 16'h0;
-      macs_1_1_mac_impl_mr <= 16'h0;
-      macs_1_1_mac_impl_adder <= 16'h0;
+      macs_1_1_mac_impl_mr <= 32'h0;
+      macs_1_1_mac_impl_adder <= 32'h0;
       macs_1_2_mac_impl_ar <= 16'h0;
       macs_1_2_mac_impl_br <= 16'h0;
-      macs_1_2_mac_impl_mr <= 16'h0;
-      macs_1_2_mac_impl_adder <= 16'h0;
+      macs_1_2_mac_impl_mr <= 32'h0;
+      macs_1_2_mac_impl_adder <= 32'h0;
       macs_1_3_mac_impl_ar <= 16'h0;
       macs_1_3_mac_impl_br <= 16'h0;
-      macs_1_3_mac_impl_mr <= 16'h0;
-      macs_1_3_mac_impl_adder <= 16'h0;
+      macs_1_3_mac_impl_mr <= 32'h0;
+      macs_1_3_mac_impl_adder <= 32'h0;
       macs_1_4_mac_impl_ar <= 16'h0;
       macs_1_4_mac_impl_br <= 16'h0;
-      macs_1_4_mac_impl_mr <= 16'h0;
-      macs_1_4_mac_impl_adder <= 16'h0;
+      macs_1_4_mac_impl_mr <= 32'h0;
+      macs_1_4_mac_impl_adder <= 32'h0;
       macs_2_0_mac_impl_ar <= 16'h0;
       macs_2_0_mac_impl_br <= 16'h0;
-      macs_2_0_mac_impl_mr <= 16'h0;
-      macs_2_0_mac_impl_adder <= 16'h0;
+      macs_2_0_mac_impl_mr <= 32'h0;
+      macs_2_0_mac_impl_adder <= 32'h0;
       macs_2_1_mac_impl_ar <= 16'h0;
       macs_2_1_mac_impl_br <= 16'h0;
-      macs_2_1_mac_impl_mr <= 16'h0;
-      macs_2_1_mac_impl_adder <= 16'h0;
+      macs_2_1_mac_impl_mr <= 32'h0;
+      macs_2_1_mac_impl_adder <= 32'h0;
       macs_2_2_mac_impl_ar <= 16'h0;
       macs_2_2_mac_impl_br <= 16'h0;
-      macs_2_2_mac_impl_mr <= 16'h0;
-      macs_2_2_mac_impl_adder <= 16'h0;
+      macs_2_2_mac_impl_mr <= 32'h0;
+      macs_2_2_mac_impl_adder <= 32'h0;
       macs_2_3_mac_impl_ar <= 16'h0;
       macs_2_3_mac_impl_br <= 16'h0;
-      macs_2_3_mac_impl_mr <= 16'h0;
-      macs_2_3_mac_impl_adder <= 16'h0;
+      macs_2_3_mac_impl_mr <= 32'h0;
+      macs_2_3_mac_impl_adder <= 32'h0;
       macs_2_4_mac_impl_ar <= 16'h0;
       macs_2_4_mac_impl_br <= 16'h0;
-      macs_2_4_mac_impl_mr <= 16'h0;
-      macs_2_4_mac_impl_adder <= 16'h0;
+      macs_2_4_mac_impl_mr <= 32'h0;
+      macs_2_4_mac_impl_adder <= 32'h0;
       macs_3_0_mac_impl_ar <= 16'h0;
       macs_3_0_mac_impl_br <= 16'h0;
-      macs_3_0_mac_impl_mr <= 16'h0;
-      macs_3_0_mac_impl_adder <= 16'h0;
+      macs_3_0_mac_impl_mr <= 32'h0;
+      macs_3_0_mac_impl_adder <= 32'h0;
       macs_3_1_mac_impl_ar <= 16'h0;
       macs_3_1_mac_impl_br <= 16'h0;
-      macs_3_1_mac_impl_mr <= 16'h0;
-      macs_3_1_mac_impl_adder <= 16'h0;
+      macs_3_1_mac_impl_mr <= 32'h0;
+      macs_3_1_mac_impl_adder <= 32'h0;
       macs_3_2_mac_impl_ar <= 16'h0;
       macs_3_2_mac_impl_br <= 16'h0;
-      macs_3_2_mac_impl_mr <= 16'h0;
-      macs_3_2_mac_impl_adder <= 16'h0;
+      macs_3_2_mac_impl_mr <= 32'h0;
+      macs_3_2_mac_impl_adder <= 32'h0;
       macs_3_3_mac_impl_ar <= 16'h0;
       macs_3_3_mac_impl_br <= 16'h0;
-      macs_3_3_mac_impl_mr <= 16'h0;
-      macs_3_3_mac_impl_adder <= 16'h0;
+      macs_3_3_mac_impl_mr <= 32'h0;
+      macs_3_3_mac_impl_adder <= 32'h0;
       macs_3_4_mac_impl_ar <= 16'h0;
       macs_3_4_mac_impl_br <= 16'h0;
-      macs_3_4_mac_impl_mr <= 16'h0;
-      macs_3_4_mac_impl_adder <= 16'h0;
+      macs_3_4_mac_impl_mr <= 32'h0;
+      macs_3_4_mac_impl_adder <= 32'h0;
       macs_4_0_mac_impl_ar <= 16'h0;
       macs_4_0_mac_impl_br <= 16'h0;
-      macs_4_0_mac_impl_mr <= 16'h0;
-      macs_4_0_mac_impl_adder <= 16'h0;
+      macs_4_0_mac_impl_mr <= 32'h0;
+      macs_4_0_mac_impl_adder <= 32'h0;
       macs_4_1_mac_impl_ar <= 16'h0;
       macs_4_1_mac_impl_br <= 16'h0;
-      macs_4_1_mac_impl_mr <= 16'h0;
-      macs_4_1_mac_impl_adder <= 16'h0;
+      macs_4_1_mac_impl_mr <= 32'h0;
+      macs_4_1_mac_impl_adder <= 32'h0;
       macs_4_2_mac_impl_ar <= 16'h0;
       macs_4_2_mac_impl_br <= 16'h0;
-      macs_4_2_mac_impl_mr <= 16'h0;
-      macs_4_2_mac_impl_adder <= 16'h0;
+      macs_4_2_mac_impl_mr <= 32'h0;
+      macs_4_2_mac_impl_adder <= 32'h0;
       macs_4_3_mac_impl_ar <= 16'h0;
       macs_4_3_mac_impl_br <= 16'h0;
-      macs_4_3_mac_impl_mr <= 16'h0;
-      macs_4_3_mac_impl_adder <= 16'h0;
+      macs_4_3_mac_impl_mr <= 32'h0;
+      macs_4_3_mac_impl_adder <= 32'h0;
       macs_4_4_mac_impl_ar <= 16'h0;
       macs_4_4_mac_impl_br <= 16'h0;
-      macs_4_4_mac_impl_mr <= 16'h0;
-      macs_4_4_mac_impl_adder <= 16'h0;
+      macs_4_4_mac_impl_mr <= 32'h0;
+      macs_4_4_mac_impl_adder <= 32'h0;
     end else begin
       counters_ai_value <= counters_ai_valueNext;
       counters_aj_value <= counters_aj_valueNext;
@@ -3261,7 +3261,7 @@ module Pe (
         macs_0_0_mac_impl_br <= macs_0_0_mac_impl_b;
       end
       if(macs_0_0_mac_impl_en)begin
-        macs_0_0_mac_impl_mr <= _zz_84_[15:0];
+        macs_0_0_mac_impl_mr <= _zz_84_;
       end
       if(macs_0_0_mac_impl_en)begin
         macs_0_0_mac_impl_adder <= (macs_0_0_mac_impl_or + macs_0_0_mac_impl_mr);
@@ -3273,7 +3273,7 @@ module Pe (
         macs_0_1_mac_impl_br <= macs_0_1_mac_impl_b;
       end
       if(macs_0_1_mac_impl_en)begin
-        macs_0_1_mac_impl_mr <= _zz_85_[15:0];
+        macs_0_1_mac_impl_mr <= _zz_85_;
       end
       if(macs_0_1_mac_impl_en)begin
         macs_0_1_mac_impl_adder <= (macs_0_1_mac_impl_or + macs_0_1_mac_impl_mr);
@@ -3285,7 +3285,7 @@ module Pe (
         macs_0_2_mac_impl_br <= macs_0_2_mac_impl_b;
       end
       if(macs_0_2_mac_impl_en)begin
-        macs_0_2_mac_impl_mr <= _zz_86_[15:0];
+        macs_0_2_mac_impl_mr <= _zz_86_;
       end
       if(macs_0_2_mac_impl_en)begin
         macs_0_2_mac_impl_adder <= (macs_0_2_mac_impl_or + macs_0_2_mac_impl_mr);
@@ -3297,7 +3297,7 @@ module Pe (
         macs_0_3_mac_impl_br <= macs_0_3_mac_impl_b;
       end
       if(macs_0_3_mac_impl_en)begin
-        macs_0_3_mac_impl_mr <= _zz_87_[15:0];
+        macs_0_3_mac_impl_mr <= _zz_87_;
       end
       if(macs_0_3_mac_impl_en)begin
         macs_0_3_mac_impl_adder <= (macs_0_3_mac_impl_or + macs_0_3_mac_impl_mr);
@@ -3309,7 +3309,7 @@ module Pe (
         macs_0_4_mac_impl_br <= macs_0_4_mac_impl_b;
       end
       if(macs_0_4_mac_impl_en)begin
-        macs_0_4_mac_impl_mr <= _zz_88_[15:0];
+        macs_0_4_mac_impl_mr <= _zz_88_;
       end
       if(macs_0_4_mac_impl_en)begin
         macs_0_4_mac_impl_adder <= (macs_0_4_mac_impl_or + macs_0_4_mac_impl_mr);
@@ -3321,7 +3321,7 @@ module Pe (
         macs_1_0_mac_impl_br <= macs_1_0_mac_impl_b;
       end
       if(macs_1_0_mac_impl_en)begin
-        macs_1_0_mac_impl_mr <= _zz_89_[15:0];
+        macs_1_0_mac_impl_mr <= _zz_89_;
       end
       if(macs_1_0_mac_impl_en)begin
         macs_1_0_mac_impl_adder <= (macs_1_0_mac_impl_or + macs_1_0_mac_impl_mr);
@@ -3333,7 +3333,7 @@ module Pe (
         macs_1_1_mac_impl_br <= macs_1_1_mac_impl_b;
       end
       if(macs_1_1_mac_impl_en)begin
-        macs_1_1_mac_impl_mr <= _zz_90_[15:0];
+        macs_1_1_mac_impl_mr <= _zz_90_;
       end
       if(macs_1_1_mac_impl_en)begin
         macs_1_1_mac_impl_adder <= (macs_1_1_mac_impl_or + macs_1_1_mac_impl_mr);
@@ -3345,7 +3345,7 @@ module Pe (
         macs_1_2_mac_impl_br <= macs_1_2_mac_impl_b;
       end
       if(macs_1_2_mac_impl_en)begin
-        macs_1_2_mac_impl_mr <= _zz_91_[15:0];
+        macs_1_2_mac_impl_mr <= _zz_91_;
       end
       if(macs_1_2_mac_impl_en)begin
         macs_1_2_mac_impl_adder <= (macs_1_2_mac_impl_or + macs_1_2_mac_impl_mr);
@@ -3357,7 +3357,7 @@ module Pe (
         macs_1_3_mac_impl_br <= macs_1_3_mac_impl_b;
       end
       if(macs_1_3_mac_impl_en)begin
-        macs_1_3_mac_impl_mr <= _zz_92_[15:0];
+        macs_1_3_mac_impl_mr <= _zz_92_;
       end
       if(macs_1_3_mac_impl_en)begin
         macs_1_3_mac_impl_adder <= (macs_1_3_mac_impl_or + macs_1_3_mac_impl_mr);
@@ -3369,7 +3369,7 @@ module Pe (
         macs_1_4_mac_impl_br <= macs_1_4_mac_impl_b;
       end
       if(macs_1_4_mac_impl_en)begin
-        macs_1_4_mac_impl_mr <= _zz_93_[15:0];
+        macs_1_4_mac_impl_mr <= _zz_93_;
       end
       if(macs_1_4_mac_impl_en)begin
         macs_1_4_mac_impl_adder <= (macs_1_4_mac_impl_or + macs_1_4_mac_impl_mr);
@@ -3381,7 +3381,7 @@ module Pe (
         macs_2_0_mac_impl_br <= macs_2_0_mac_impl_b;
       end
       if(macs_2_0_mac_impl_en)begin
-        macs_2_0_mac_impl_mr <= _zz_94_[15:0];
+        macs_2_0_mac_impl_mr <= _zz_94_;
       end
       if(macs_2_0_mac_impl_en)begin
         macs_2_0_mac_impl_adder <= (macs_2_0_mac_impl_or + macs_2_0_mac_impl_mr);
@@ -3393,7 +3393,7 @@ module Pe (
         macs_2_1_mac_impl_br <= macs_2_1_mac_impl_b;
       end
       if(macs_2_1_mac_impl_en)begin
-        macs_2_1_mac_impl_mr <= _zz_95_[15:0];
+        macs_2_1_mac_impl_mr <= _zz_95_;
       end
       if(macs_2_1_mac_impl_en)begin
         macs_2_1_mac_impl_adder <= (macs_2_1_mac_impl_or + macs_2_1_mac_impl_mr);
@@ -3405,7 +3405,7 @@ module Pe (
         macs_2_2_mac_impl_br <= macs_2_2_mac_impl_b;
       end
       if(macs_2_2_mac_impl_en)begin
-        macs_2_2_mac_impl_mr <= _zz_96_[15:0];
+        macs_2_2_mac_impl_mr <= _zz_96_;
       end
       if(macs_2_2_mac_impl_en)begin
         macs_2_2_mac_impl_adder <= (macs_2_2_mac_impl_or + macs_2_2_mac_impl_mr);
@@ -3417,7 +3417,7 @@ module Pe (
         macs_2_3_mac_impl_br <= macs_2_3_mac_impl_b;
       end
       if(macs_2_3_mac_impl_en)begin
-        macs_2_3_mac_impl_mr <= _zz_97_[15:0];
+        macs_2_3_mac_impl_mr <= _zz_97_;
       end
       if(macs_2_3_mac_impl_en)begin
         macs_2_3_mac_impl_adder <= (macs_2_3_mac_impl_or + macs_2_3_mac_impl_mr);
@@ -3429,7 +3429,7 @@ module Pe (
         macs_2_4_mac_impl_br <= macs_2_4_mac_impl_b;
       end
       if(macs_2_4_mac_impl_en)begin
-        macs_2_4_mac_impl_mr <= _zz_98_[15:0];
+        macs_2_4_mac_impl_mr <= _zz_98_;
       end
       if(macs_2_4_mac_impl_en)begin
         macs_2_4_mac_impl_adder <= (macs_2_4_mac_impl_or + macs_2_4_mac_impl_mr);
@@ -3441,7 +3441,7 @@ module Pe (
         macs_3_0_mac_impl_br <= macs_3_0_mac_impl_b;
       end
       if(macs_3_0_mac_impl_en)begin
-        macs_3_0_mac_impl_mr <= _zz_99_[15:0];
+        macs_3_0_mac_impl_mr <= _zz_99_;
       end
       if(macs_3_0_mac_impl_en)begin
         macs_3_0_mac_impl_adder <= (macs_3_0_mac_impl_or + macs_3_0_mac_impl_mr);
@@ -3453,7 +3453,7 @@ module Pe (
         macs_3_1_mac_impl_br <= macs_3_1_mac_impl_b;
       end
       if(macs_3_1_mac_impl_en)begin
-        macs_3_1_mac_impl_mr <= _zz_100_[15:0];
+        macs_3_1_mac_impl_mr <= _zz_100_;
       end
       if(macs_3_1_mac_impl_en)begin
         macs_3_1_mac_impl_adder <= (macs_3_1_mac_impl_or + macs_3_1_mac_impl_mr);
@@ -3465,7 +3465,7 @@ module Pe (
         macs_3_2_mac_impl_br <= macs_3_2_mac_impl_b;
       end
       if(macs_3_2_mac_impl_en)begin
-        macs_3_2_mac_impl_mr <= _zz_101_[15:0];
+        macs_3_2_mac_impl_mr <= _zz_101_;
       end
       if(macs_3_2_mac_impl_en)begin
         macs_3_2_mac_impl_adder <= (macs_3_2_mac_impl_or + macs_3_2_mac_impl_mr);
@@ -3477,7 +3477,7 @@ module Pe (
         macs_3_3_mac_impl_br <= macs_3_3_mac_impl_b;
       end
       if(macs_3_3_mac_impl_en)begin
-        macs_3_3_mac_impl_mr <= _zz_102_[15:0];
+        macs_3_3_mac_impl_mr <= _zz_102_;
       end
       if(macs_3_3_mac_impl_en)begin
         macs_3_3_mac_impl_adder <= (macs_3_3_mac_impl_or + macs_3_3_mac_impl_mr);
@@ -3489,7 +3489,7 @@ module Pe (
         macs_3_4_mac_impl_br <= macs_3_4_mac_impl_b;
       end
       if(macs_3_4_mac_impl_en)begin
-        macs_3_4_mac_impl_mr <= _zz_103_[15:0];
+        macs_3_4_mac_impl_mr <= _zz_103_;
       end
       if(macs_3_4_mac_impl_en)begin
         macs_3_4_mac_impl_adder <= (macs_3_4_mac_impl_or + macs_3_4_mac_impl_mr);
@@ -3501,7 +3501,7 @@ module Pe (
         macs_4_0_mac_impl_br <= macs_4_0_mac_impl_b;
       end
       if(macs_4_0_mac_impl_en)begin
-        macs_4_0_mac_impl_mr <= _zz_104_[15:0];
+        macs_4_0_mac_impl_mr <= _zz_104_;
       end
       if(macs_4_0_mac_impl_en)begin
         macs_4_0_mac_impl_adder <= (macs_4_0_mac_impl_or + macs_4_0_mac_impl_mr);
@@ -3513,7 +3513,7 @@ module Pe (
         macs_4_1_mac_impl_br <= macs_4_1_mac_impl_b;
       end
       if(macs_4_1_mac_impl_en)begin
-        macs_4_1_mac_impl_mr <= _zz_105_[15:0];
+        macs_4_1_mac_impl_mr <= _zz_105_;
       end
       if(macs_4_1_mac_impl_en)begin
         macs_4_1_mac_impl_adder <= (macs_4_1_mac_impl_or + macs_4_1_mac_impl_mr);
@@ -3525,7 +3525,7 @@ module Pe (
         macs_4_2_mac_impl_br <= macs_4_2_mac_impl_b;
       end
       if(macs_4_2_mac_impl_en)begin
-        macs_4_2_mac_impl_mr <= _zz_106_[15:0];
+        macs_4_2_mac_impl_mr <= _zz_106_;
       end
       if(macs_4_2_mac_impl_en)begin
         macs_4_2_mac_impl_adder <= (macs_4_2_mac_impl_or + macs_4_2_mac_impl_mr);
@@ -3537,7 +3537,7 @@ module Pe (
         macs_4_3_mac_impl_br <= macs_4_3_mac_impl_b;
       end
       if(macs_4_3_mac_impl_en)begin
-        macs_4_3_mac_impl_mr <= _zz_107_[15:0];
+        macs_4_3_mac_impl_mr <= _zz_107_;
       end
       if(macs_4_3_mac_impl_en)begin
         macs_4_3_mac_impl_adder <= (macs_4_3_mac_impl_or + macs_4_3_mac_impl_mr);
@@ -3549,7 +3549,7 @@ module Pe (
         macs_4_4_mac_impl_br <= macs_4_4_mac_impl_b;
       end
       if(macs_4_4_mac_impl_en)begin
-        macs_4_4_mac_impl_mr <= _zz_108_[15:0];
+        macs_4_4_mac_impl_mr <= _zz_108_;
       end
       if(macs_4_4_mac_impl_en)begin
         macs_4_4_mac_impl_adder <= (macs_4_4_mac_impl_or + macs_4_4_mac_impl_mr);
@@ -3726,38 +3726,38 @@ module PeStream (
   input      [15:0]   streamB_payload,
   output              streamR_valid,
   input               streamR_ready,
-  output     [15:0]   streamR_payload,
+  output     [31:0]   streamR_payload,
   input               clk,
   input               reset 
 );
   reg                 _zz_2_;
   reg                 _zz_3_;
-  reg        [15:0]   _zz_4_;
-  wire       [15:0]   pe_1__io_results_0_0;
-  wire       [15:0]   pe_1__io_results_0_1;
-  wire       [15:0]   pe_1__io_results_0_2;
-  wire       [15:0]   pe_1__io_results_0_3;
-  wire       [15:0]   pe_1__io_results_0_4;
-  wire       [15:0]   pe_1__io_results_1_0;
-  wire       [15:0]   pe_1__io_results_1_1;
-  wire       [15:0]   pe_1__io_results_1_2;
-  wire       [15:0]   pe_1__io_results_1_3;
-  wire       [15:0]   pe_1__io_results_1_4;
-  wire       [15:0]   pe_1__io_results_2_0;
-  wire       [15:0]   pe_1__io_results_2_1;
-  wire       [15:0]   pe_1__io_results_2_2;
-  wire       [15:0]   pe_1__io_results_2_3;
-  wire       [15:0]   pe_1__io_results_2_4;
-  wire       [15:0]   pe_1__io_results_3_0;
-  wire       [15:0]   pe_1__io_results_3_1;
-  wire       [15:0]   pe_1__io_results_3_2;
-  wire       [15:0]   pe_1__io_results_3_3;
-  wire       [15:0]   pe_1__io_results_3_4;
-  wire       [15:0]   pe_1__io_results_4_0;
-  wire       [15:0]   pe_1__io_results_4_1;
-  wire       [15:0]   pe_1__io_results_4_2;
-  wire       [15:0]   pe_1__io_results_4_3;
-  wire       [15:0]   pe_1__io_results_4_4;
+  reg        [31:0]   _zz_4_;
+  wire       [31:0]   pe_1__io_results_0_0;
+  wire       [31:0]   pe_1__io_results_0_1;
+  wire       [31:0]   pe_1__io_results_0_2;
+  wire       [31:0]   pe_1__io_results_0_3;
+  wire       [31:0]   pe_1__io_results_0_4;
+  wire       [31:0]   pe_1__io_results_1_0;
+  wire       [31:0]   pe_1__io_results_1_1;
+  wire       [31:0]   pe_1__io_results_1_2;
+  wire       [31:0]   pe_1__io_results_1_3;
+  wire       [31:0]   pe_1__io_results_1_4;
+  wire       [31:0]   pe_1__io_results_2_0;
+  wire       [31:0]   pe_1__io_results_2_1;
+  wire       [31:0]   pe_1__io_results_2_2;
+  wire       [31:0]   pe_1__io_results_2_3;
+  wire       [31:0]   pe_1__io_results_2_4;
+  wire       [31:0]   pe_1__io_results_3_0;
+  wire       [31:0]   pe_1__io_results_3_1;
+  wire       [31:0]   pe_1__io_results_3_2;
+  wire       [31:0]   pe_1__io_results_3_3;
+  wire       [31:0]   pe_1__io_results_3_4;
+  wire       [31:0]   pe_1__io_results_4_0;
+  wire       [31:0]   pe_1__io_results_4_1;
+  wire       [31:0]   pe_1__io_results_4_2;
+  wire       [31:0]   pe_1__io_results_4_3;
+  wire       [31:0]   pe_1__io_results_4_4;
   wire                pe_1__io_done;
   wire                pe_1__io_last;
   wire                _zz_5_;
@@ -3767,31 +3767,31 @@ module PeStream (
   reg        [15:0]   payloadB;
   wire                outBlocked;
   wire                done;
-  reg        [15:0]   resultStream_results_0;
-  reg        [15:0]   resultStream_results_1;
-  reg        [15:0]   resultStream_results_2;
-  reg        [15:0]   resultStream_results_3;
-  reg        [15:0]   resultStream_results_4;
-  reg        [15:0]   resultStream_results_5;
-  reg        [15:0]   resultStream_results_6;
-  reg        [15:0]   resultStream_results_7;
-  reg        [15:0]   resultStream_results_8;
-  reg        [15:0]   resultStream_results_9;
-  reg        [15:0]   resultStream_results_10;
-  reg        [15:0]   resultStream_results_11;
-  reg        [15:0]   resultStream_results_12;
-  reg        [15:0]   resultStream_results_13;
-  reg        [15:0]   resultStream_results_14;
-  reg        [15:0]   resultStream_results_15;
-  reg        [15:0]   resultStream_results_16;
-  reg        [15:0]   resultStream_results_17;
-  reg        [15:0]   resultStream_results_18;
-  reg        [15:0]   resultStream_results_19;
-  reg        [15:0]   resultStream_results_20;
-  reg        [15:0]   resultStream_results_21;
-  reg        [15:0]   resultStream_results_22;
-  reg        [15:0]   resultStream_results_23;
-  reg        [15:0]   resultStream_results_24;
+  reg        [31:0]   resultStream_results_0;
+  reg        [31:0]   resultStream_results_1;
+  reg        [31:0]   resultStream_results_2;
+  reg        [31:0]   resultStream_results_3;
+  reg        [31:0]   resultStream_results_4;
+  reg        [31:0]   resultStream_results_5;
+  reg        [31:0]   resultStream_results_6;
+  reg        [31:0]   resultStream_results_7;
+  reg        [31:0]   resultStream_results_8;
+  reg        [31:0]   resultStream_results_9;
+  reg        [31:0]   resultStream_results_10;
+  reg        [31:0]   resultStream_results_11;
+  reg        [31:0]   resultStream_results_12;
+  reg        [31:0]   resultStream_results_13;
+  reg        [31:0]   resultStream_results_14;
+  reg        [31:0]   resultStream_results_15;
+  reg        [31:0]   resultStream_results_16;
+  reg        [31:0]   resultStream_results_17;
+  reg        [31:0]   resultStream_results_18;
+  reg        [31:0]   resultStream_results_19;
+  reg        [31:0]   resultStream_results_20;
+  reg        [31:0]   resultStream_results_21;
+  reg        [31:0]   resultStream_results_22;
+  reg        [31:0]   resultStream_results_23;
+  reg        [31:0]   resultStream_results_24;
   reg                 resultStream_counter_willIncrement;
   reg                 resultStream_counter_willClear;
   reg        [4:0]    resultStream_counter_valueNext;
@@ -3799,9 +3799,9 @@ module PeStream (
   wire                resultStream_counter_willOverflowIfInc;
   wire                resultStream_counter_willOverflow;
   reg                 resultStream_valid;
-  wire       [15:0]   _zz_1_;
-  reg        [15:0]   resultStream_payload;
-  reg        [15:0]   resultStream_payload_regNext;
+  wire       [31:0]   _zz_1_;
+  reg        [31:0]   resultStream_payload;
+  reg        [31:0]   resultStream_payload_regNext;
   reg                 resultStream_valid_regNext;
 
   assign _zz_5_ = (pe_1__io_last || outBlocked);
@@ -3812,31 +3812,31 @@ module PeStream (
     .io_flowA_payload    (payloadA[15:0]              ), //i
     .io_flowB_valid      (_zz_3_                      ), //i
     .io_flowB_payload    (payloadB[15:0]              ), //i
-    .io_results_0_0      (pe_1__io_results_0_0[15:0]  ), //o
-    .io_results_0_1      (pe_1__io_results_0_1[15:0]  ), //o
-    .io_results_0_2      (pe_1__io_results_0_2[15:0]  ), //o
-    .io_results_0_3      (pe_1__io_results_0_3[15:0]  ), //o
-    .io_results_0_4      (pe_1__io_results_0_4[15:0]  ), //o
-    .io_results_1_0      (pe_1__io_results_1_0[15:0]  ), //o
-    .io_results_1_1      (pe_1__io_results_1_1[15:0]  ), //o
-    .io_results_1_2      (pe_1__io_results_1_2[15:0]  ), //o
-    .io_results_1_3      (pe_1__io_results_1_3[15:0]  ), //o
-    .io_results_1_4      (pe_1__io_results_1_4[15:0]  ), //o
-    .io_results_2_0      (pe_1__io_results_2_0[15:0]  ), //o
-    .io_results_2_1      (pe_1__io_results_2_1[15:0]  ), //o
-    .io_results_2_2      (pe_1__io_results_2_2[15:0]  ), //o
-    .io_results_2_3      (pe_1__io_results_2_3[15:0]  ), //o
-    .io_results_2_4      (pe_1__io_results_2_4[15:0]  ), //o
-    .io_results_3_0      (pe_1__io_results_3_0[15:0]  ), //o
-    .io_results_3_1      (pe_1__io_results_3_1[15:0]  ), //o
-    .io_results_3_2      (pe_1__io_results_3_2[15:0]  ), //o
-    .io_results_3_3      (pe_1__io_results_3_3[15:0]  ), //o
-    .io_results_3_4      (pe_1__io_results_3_4[15:0]  ), //o
-    .io_results_4_0      (pe_1__io_results_4_0[15:0]  ), //o
-    .io_results_4_1      (pe_1__io_results_4_1[15:0]  ), //o
-    .io_results_4_2      (pe_1__io_results_4_2[15:0]  ), //o
-    .io_results_4_3      (pe_1__io_results_4_3[15:0]  ), //o
-    .io_results_4_4      (pe_1__io_results_4_4[15:0]  ), //o
+    .io_results_0_0      (pe_1__io_results_0_0[31:0]  ), //o
+    .io_results_0_1      (pe_1__io_results_0_1[31:0]  ), //o
+    .io_results_0_2      (pe_1__io_results_0_2[31:0]  ), //o
+    .io_results_0_3      (pe_1__io_results_0_3[31:0]  ), //o
+    .io_results_0_4      (pe_1__io_results_0_4[31:0]  ), //o
+    .io_results_1_0      (pe_1__io_results_1_0[31:0]  ), //o
+    .io_results_1_1      (pe_1__io_results_1_1[31:0]  ), //o
+    .io_results_1_2      (pe_1__io_results_1_2[31:0]  ), //o
+    .io_results_1_3      (pe_1__io_results_1_3[31:0]  ), //o
+    .io_results_1_4      (pe_1__io_results_1_4[31:0]  ), //o
+    .io_results_2_0      (pe_1__io_results_2_0[31:0]  ), //o
+    .io_results_2_1      (pe_1__io_results_2_1[31:0]  ), //o
+    .io_results_2_2      (pe_1__io_results_2_2[31:0]  ), //o
+    .io_results_2_3      (pe_1__io_results_2_3[31:0]  ), //o
+    .io_results_2_4      (pe_1__io_results_2_4[31:0]  ), //o
+    .io_results_3_0      (pe_1__io_results_3_0[31:0]  ), //o
+    .io_results_3_1      (pe_1__io_results_3_1[31:0]  ), //o
+    .io_results_3_2      (pe_1__io_results_3_2[31:0]  ), //o
+    .io_results_3_3      (pe_1__io_results_3_3[31:0]  ), //o
+    .io_results_3_4      (pe_1__io_results_3_4[31:0]  ), //o
+    .io_results_4_0      (pe_1__io_results_4_0[31:0]  ), //o
+    .io_results_4_1      (pe_1__io_results_4_1[31:0]  ), //o
+    .io_results_4_2      (pe_1__io_results_4_2[31:0]  ), //o
+    .io_results_4_3      (pe_1__io_results_4_3[31:0]  ), //o
+    .io_results_4_4      (pe_1__io_results_4_4[31:0]  ), //o
     .io_clear            (done                        ), //i
     .io_done             (pe_1__io_done               ), //o
     .io_last             (pe_1__io_last               ), //o
@@ -3980,8 +3980,10 @@ module PeStream (
 
   assign _zz_1_ = _zz_4_;
   always @ (*) begin
-    resultStream_payload[15 : 8] = _zz_1_[7 : 0];
-    resultStream_payload[7 : 0] = _zz_1_[15 : 8];
+    resultStream_payload[31 : 24] = _zz_1_[7 : 0];
+    resultStream_payload[23 : 16] = _zz_1_[15 : 8];
+    resultStream_payload[15 : 8] = _zz_1_[23 : 16];
+    resultStream_payload[7 : 0] = _zz_1_[31 : 24];
   end
 
   assign streamR_payload = resultStream_payload_regNext;
