@@ -27,7 +27,7 @@ class MacImpl(cfg: MacCfg = MacCfg()) extends Area {
 
   def input(ina: UInt, inb: UInt): Unit = {
     assert(ina.getBitsWidth == cfg.bits, "input a bit width mismatch")
-    assert(inb.getBitsWidth == cfg.bits, "input a bit width mismatch")
+    assert(inb.getBitsWidth == cfg.bits, "input b bit width mismatch")
 
     a := ina
     b := inb
